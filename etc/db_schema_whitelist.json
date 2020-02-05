@@ -1,0 +1,29 @@
+{
+    "merchantesolutions_transaction": {
+        "column": {
+            "entity_id": true,
+            "quote_id": true,
+            "tran_type": true,
+            "tran_amount": true,
+            "card_id": true,
+            "invoice_number": true,
+            "currency_code": true,
+            "client_ref_number": true,
+            "acct_number": true,
+            "exp_date": true,
+            "retrieval_ref_number": true,
+            "auth_code": true,
+            "resp_code": true,
+            "resp_text": true,
+            "tran_id": true,
+            "tran_date": true,
+            "created_at": true,
+            "error_code": true,
+            "auth_response_text": true,
+            "transaction_id": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

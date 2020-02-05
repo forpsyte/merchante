@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Visiture, LLC. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="payment">
+            <group id="merchantesolutions_section" sortOrder="7" showInDefault="0" showInWebsite="0" showInStore="0">
+                <group id="merchantesolutions" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Merchant e-Solutions</label>
+                    <comment><![CDATA[The MeS Payment Gateway enables merchants to run live credit card transactions by <br/>acting as a bridge between a point of sale system, and the MeS payment network.]]></comment>
+                    <fieldset_css>complex merchantesolutions-section</fieldset_css>
+                    <frontend_model>Magento\Paypal\Block\Adminhtml\System\Config\Fieldset\Payment</frontend_model>
+                    <attribute type="activity_path">payment/merchantesolutions/active</attribute>
+                    <attribute type="displayIn">recommended_solutions</attribute>
+                    <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Enable this Solution</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <config_path>payment/merchantesolutions/active</config_path>
+                        <requires>
+                            <group id="merchantesolutions_required"/>
+                        </requires>
+                    </field>
+                    <field id="merchantesolutions_cc_vault_active" translate="label" type="select" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Card on File Enabled</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <config_path>payment/merchantesolutions_cc_vault/active</config_path>
+                        <requires>
+                            <group id="merchantesolutions_required"/>
+                        </requires>
+                    </field>
+                    <field id="merchantesolutions_hosted_checkout_active" translate="label" type="select" sortOrder="12" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Hosted Checkout Enabled</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <config_path>payment/merchantesolutions_hosted_checkout/active</config_path>
+                        <requires>
+                            <group id="merchantesolutions_required"/>
+                        </requires>
+                    </field>
+                    <group id="merchantesolutions_required" translate="label" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="5">
+                        <label>Basic Merchant e-Solutions Settings</label>
+                        <attribute type="expanded">1</attribute>
+                        <frontend_model>Magento\Config\Block\System\Config\Form\Fieldset</frontend_model>
+                        <field id="title" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                            <label>Title</label>
+                            <config_path>payment/merchantesolutions/title</config_path>
+                        </field>
+                        <field id="environment" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Environment</label>
+                            <source_model>Magento\Merchantesolutions\Model\Adminhtml\Source\Environment</source_model>
+                            <config_path>payment/merchantesolutions/environment</config_path>
+                        </field>
+                        <field id="payment_action" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Payment Action</label>
+                            <source_model>Magento\Merchantesolutions\Model\Adminhtml\Source\PaymentAction</source_model>
+                            <config_path>payment/merchantesolutions/payment_action</config_path>
+                        </field>
+                        <field id="profile_id" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Profile ID</label>
+                            <config_path>payment/merchantesolutions/profile_id</config_path>
+                            <comment>This is a 20 digit merchant identifier issued by a sales representative, certification manager, or from a VAR form.</comment>
+                        </field>
+                        <field id="profile_key" translate="label" type="obscure" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Profile Key</label>
+                            <config_path>payment/merchantesolutions/profile_key</config_path>
+                            <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                            <comment>This is a 32 character encoded pass key issued by a sales representative, certification manager, or from a VAR form.</comment>
+                        </field>
+                        <field id="user_id" translate="label" type="text" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>User ID</label>
+                            <config_path>payment/merchantesolutions/user_id</config_path>
+                            <comment>This user login ID is used to pull reporting data from the Merchant e-Solutions web reporting system.</comment>
+                        </field>
+                        <field id="user_pass" showInDefault="1" showInWebsite="1" sortOrder="240" type="obscure" translate="label comment">
+                            <label>User Password</label>
+                            <comment>This user login password is used with the user login ID to pull reporting data from the Merchant e-Solutions web reporting system.</comment>
+                            <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                        </field>
+                    </group>
+                    <group id="merchantesolutions_advanced" translate="label" showInDefault="1" showInWebsite="1" showInStore="0" sortOrder="20">
+                        <label>Advanced Merchant e-Solutions Settings</label>
+                        <frontend_model>Magento\Config\Block\System\Config\Form\Fieldset</frontend_model>
+                        <field id="debug" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Debug</label>
+                            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                            <config_path>payment/merchantesolutions/debug</config_path>
+                        </field>
+                        <field id="useccv" translate="label comment" type="select" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>CVV Verification</label>
+                            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                            <config_path>payment/merchantesolutions/useccv</config_path>
+                        </field>
+                        <field id="cctypes" translate="label" type="multiselect" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Credit Card Types</label>
+                            <source_model>Magento\Merchantesolutions\Model\Adminhtml\Source\CcType</source_model>
+                            <config_path>payment/merchantesolutions/cctypes</config_path>
+                        </field>
+                        <field id="use_level_iii" showInDefault="1" showInWebsite="1" sortOrder="170" type="select" translate="label comment">
+                            <label>Use Level II/III Processing</label>
+                            <comment><![CDATA[To learn more about Level II/III Processing, see the <a href="https://developer.merchante-solutions.com/#/level-3-processing" target="_blank">Level II/III developer documentation</a>]]></comment>
+                            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        </field>
+                        <field id="commodity_code" showInDefault="1" showInWebsite="1" sortOrder="180" type="text" translate="label comment">
+                            <label>Default Commodity Code</label>
+                            <comment><![CDATA[
+                                Enter the 5 digit commodity code that best describes the type of products that you sell. This value is used if a product does not have a summary commodity code assigned to it.
+                                <a href="https://a37186aa94a08d9086cb-3c54b90d7c788e49a2e99bea979bb225.ssl.cf1.rackcdn.com/commodity_codes.pdf" target="_blank">Click here to download the PDF list of valid commodity codes.</a>
+                                This value is required to obtain Level 3 Interchange rates.]]>
+                            </comment>
+                            <validate>validate-number validate-length minimum-length-5 maximum-length-5</validate>
+                            <depends>
+                                <field id="use_level_iii">1</field>
+                            </depends>
+                        </field>
+                        <field id="client_reference_number" translate="label comment" type="text" sortOrder="190" showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Client Reference Number</label>
+                            <comment><![CDATA[
+                            This client reference number shows in all Merchant eSolutions reporting.<br />
+                            Variables include [ip], [orderid], [name], [email], [phone], [company], [customerid].<br /><br />
+                            Example: "Order #[orderid] for [name] ([email])"<br />
+                            Default is "Order #[orderid]".]]>
+                            </comment>
+                        </field>
+                        <field id="sort_order" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Sort Order</label>
+                            <frontend_class>validate-number</frontend_class>
+                            <config_path>payment/merchantesolutions/sort_order</config_path>
+                        </field>
+                    </group>
+                    <group id="merchantesolutions_hosted_checkout" translate="label" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="30">
+                        <label>Hosted Checkout Settings</label>
+                        <frontend_model>Magento\Config\Block\System\Config\Form\Fieldset</frontend_model>
+                        <field id="title" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                            <label>Title</label>
+                            <config_path>payment/merchantesolutions_hosted_checkout/title</config_path>
+                        </field>
+                        <field id="payment_action" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Payment Action</label>
+                            <source_model>Magento\Merchantesolutions\Model\Adminhtml\Source\PaymentAction</source_model>
+                            <config_path>payment/merchantesolutions_hosted_checkout/payment_action</config_path>
+                        </field>
+                        <field id="debug" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Debug</label>
+                            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                            <config_path>payment/merchantesolutions_hosted_checkout/debug</config_path>
+                        </field>
+                    </group>
+                    <group id="merchantesolutions_country_specific" translate="label" showInDefault="1" showInWebsite="1" showInStore="0" sortOrder="40">
+                        <label>Country Specific Settings</label>
+                        <frontend_model>Magento\Config\Block\System\Config\Form\Fieldset</frontend_model>
+                        <field id="allowspecific" translate="label" type="allowspecific" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Payment from Applicable Countries</label>
+                            <source_model>Magento\Payment\Model\Config\Source\Allspecificcountries</source_model>
+                            <config_path>payment/merchantesolutions/allowspecific</config_path>
+                        </field>
+                        <field id="specificcountry" translate="label" type="multiselect" sortOrder="210" showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Payment from Specific Countries</label>
+                            <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                            <can_be_empty>1</can_be_empty>
+                            <config_path>payment/merchantesolutions/specificcountry</config_path>
+                        </field>
+                    </group>
+                </group>
+            </group>
+        </section>
+    </system>
+</config>

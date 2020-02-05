@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Payment:etc/error_mapping.xsd">
+    <message_list>
+        <message code="001" translate="true">Refer to card issuer.</message>
+        <message code="002" translate="true">Refer to card issuer.</message>
+        <message code="003" translate="true">Invalid merchant</message>
+        <message code="006" translate="true">There was an error processing your transaction. Please try again.</message>
+        <message code="012" translate="true">Invalid transaction</message>
+        <message code="013" translate="true">Invalid amount or currency conversion field overflow</message>
+        <message code="014" translate="true">Invalid account number (no such number)</message>
+        <message code="015" translate="true">No such issuer</message>
+        <message code="025" translate="true">Unable to locate record in file</message>
+        <message code="028" translate="true">File temporarily not available for update or inquiry</message>
+        <message code="030" translate="true">Format error(Verification only) Transaction type not supported by issuer</message>
+        <message code="039" translate="true">No credit account</message>
+        <message code="041" translate="true">Lost card</message>
+        <message code="043" translate="true">Stolen card</message>
+        <message code="051" translate="true">Insufficient funds/over credit limit</message>
+        <message code="054" translate="true">Expired card of expiration date is missing</message>
+        <message code="057" translate="true">Transaction not permitted to cardholder</message>
+        <message code="059" translate="true">Suspected fraud</message>
+        <message code="061" translate="true">The transaction exceeds approval amount limit</message>
+        <message code="062" translate="true">Restricted card (card invalid in this region or country)</message>
+        <message code="065" translate="true">The transaction has exceeded withdrawal frequency limit.</message>
+        <message code="093" translate="true">Transaction cannot be completed</message>
+        <message code="101" translate="true">Invalid Profile ID or Key</message>
+        <message code="102" translate="true">Incomplete request</message>
+        <message code="103" translate="true">Invoice number length error. Confirm invoice number is 17 or fewer characters then retry.</message>
+        <message code="104" translate="true">Reference Number Length Error</message>
+        <message code="106" translate="true">AVS zip length error. Zip code exceeds the max length</message>
+        <message code="107" translate="true">Merchant Name Length Error</message>
+        <message code="108" translate="true">Merchant City Length Error</message>
+        <message code="109" translate="true">Merchant State Length Error</message>
+        <message code="110" translate="true">Merchant Zip Length Error</message>
+        <message code="111" translate="true">Merchant Category Code Length Error</message>
+        <message code="112" translate="true">Merchant Phone Length Error</message>
+        <message code="113" translate="true">Reference Number Must Be Numeric</message>
+        <message code="114" translate="true">Missing Card Holder Account Data</message>
+        <message code="115" translate="true">Invalid Card Number</message>
+        <message code="117" translate="true">Card Type Not Accepted</message>
+        <message code="118" translate="true">Currency Type Not Accepted</message>
+        <message code="121" translate="true">MOTO/e-Commerce indicator length error</message>
+        <message code="122" translate="true">Non-USD offline transactions are not supported</message>
+        <message code="123" translate="true">Client Reference Number length error</message>
+        <message code="127" translate="true">Invalid Level III Line Item Detail</message>
+        <message code="128" translate="true">Invalid Level III Merchant Tax ID </message>
+        <message code="129" translate="true">Invalid Level III Customer Tax ID </message>
+        <message code="130" translate="true">Invalid Level III Summary Commodity Code</message>
+        <message code="131" translate="true">Invalid Level III Ship to Zip</message>
+        <message code="132" translate="true">Invalid Level III Ship from Zip</message>
+        <message code="133" translate="true">Invalid Level III Destination Country Code</message>
+        <message code="134" translate="true">Invalid Level III VAT Invoice Number </message>
+        <message code="135" translate="true">Invalid Level III Alternate Tax Indicator</message>
+        <message code="136" translate="true">Transaction type does not support Level III data</message>
+        <message code="137" translate="true">Invalid Level III Discount Amount</message>
+        <message code="138" translate="true">Invalid Level III Duty Amount</message>
+        <message code="139" translate="true">Invalid Level III Order Date </message>
+        <message code="140" translate="true">Invalid Level III VAT Amount </message>
+        <message code="141" translate="true">Invalid Level III VAT Rate</message>
+        <message code="142" translate="true">Invalid Level III Alternate Tax Amount </message>
+        <message code="143" translate="true">Invalid Level III Line Item Count</message>
+        <message code="144" translate="true">Invalid Level III Card Type </message>
+        <message code="168" translate="true">Invalid Industry Code</message>
+        <message code="201" translate="true">Invalid Transaction ID</message>
+        <message code="202" translate="true">Invalid Transaction Amount</message>
+        <message code="203" translate="true">Void Failed</message>
+        <message code="207" translate="true">Refund failed</message>
+        <message code="208" translate="true">Failed to receive a response from auth host</message>
+        <message code="209" translate="true">Invalid tax amount</message>
+        <message code="210" translate="true">AVS result is declined by user</message>
+        <message code="211" translate="true">CVV2 result is declined by user </message>
+        <message code="212" translate="true">Refund amount must be between zero and the original amount</message>
+        <message code="213" translate="true">Only sale transactions can be refunded</message>
+        <message code="214" translate="true">Only one type of card data allowed per request</message>
+        <message code="215" translate="true">Invalid Card ID</message>
+        <message code="216" translate="true">Failed to load card data, retry request</message>
+        <message code="217" translate="true">Failed to store card data, retry request</message>
+        <message code="218" translate="true">Card ID parameter cannot be included in this type of transaction</message>
+        <message code="219" translate="true">Offline transactions require an authorization code</message>
+        <message code="220" translate="true">Failed to delete card data, retry request</message>
+        <message code="221" translate="true">Invalid Card ID</message>
+        <message code="222" translate="true">Card ID required</message>
+        <message code="223" translate="true">Retry Request ID Lookup Failed</message>
+        <message code="300" translate="true">Failed to capture International transaction</message>
+        <message code="301" translate="true">Failed to void International transaction </message>
+        <message code="302" translate="true">Failed to refund International transaction</message>
+        <message code="999" translate="true">Internal Error</message>
+    </message_list>
+</mapping>

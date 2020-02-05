@@ -1,0 +1,31 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="merchantesolutions_transaction" resource="default" engine="innodb" comment="Merchant e-Solutions Table">
+        <column xsi:type="int" name="entity_id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="Entity ID"/>
+        <column xsi:type="varchar" name="quote_id" length="64" nullable="false"
+                identity="false" comment="Quote ID"/>
+        <column xsi:type="varchar" name="tran_type" nullable="true" length="8" comment="Transaction Type"/>
+        <column xsi:type="decimal" name="tran_amount" scale="4" precision="20" unsigned="false" nullable="true"
+                default="0" comment="Transaction Amount"/>
+        <column xsi:type="varchar" name="card_id" nullable="true" length="64" comment="Card ID"/>
+        <column xsi:type="varchar" name="invoice_number" nullable="true" length="64" comment="Invoice Number"/>
+        <column xsi:type="varchar" name="currency_code" nullable="true" length="64" comment="Currency Code"/>
+        <column xsi:type="varchar" name="client_ref_number" nullable="true" length="64"
+                comment="Client Reference Number"/>
+        <column xsi:type="varchar" name="acct_number" nullable="true" length="64" comment="Account Number"/>
+        <column xsi:type="varchar" name="exp_date" nullable="true" length="64" comment="Expiration Date"/>
+        <column xsi:type="varchar" name="retrieval_ref_number" nullable="true" length="64"
+                comment="Retrieval Reference Number"/>
+        <column xsi:type="varchar" name="auth_code" nullable="true" length="64" comment="Authorization Code"/>
+        <column xsi:type="varchar" name="error_code" nullable="true" length="64" comment="Response Code" onCreate="migrateDataFrom(resp_code)"/>
+        <column xsi:type="varchar" name="auth_response_text" nullable="true" length="64" comment="Response Text" onCreate="migrateDataFrom(resp_text)"/>
+        <column xsi:type="varchar" name="transaction_id" nullable="true" length="64" comment="Transaction ID" onCreate="migrateDataFrom(tran_id)"/>
+        <column xsi:type="varchar" name="tran_date" nullable="true" length="64" comment="Transaction Date"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Created At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+    </table>
+</schema>

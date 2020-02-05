@@ -1,0 +1,36 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Checkout\Model\CompositeConfigProvider">
+        <arguments>
+            <argument name="configProviders" xsi:type="array">
+                <item name="merchantesolutions_config_provider" xsi:type="object">Magento\Merchantesolutions\Model\Ui\ConfigProvider</item>
+                <item name="merchantesolutions_hosted_checkout_config_provider" xsi:type="object">Magento\Merchantesolutions\Model\Ui\HostedCheckout\ConfigProvider</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Payment\Model\CcGenericConfigProvider">
+        <arguments>
+            <argument name="methodCodes" xsi:type="array">
+                <item name="merchantesolutions" xsi:type="const">Magento\Merchantesolutions\Model\Ui\ConfigProvider::CODE</item>
+                <item name="merchantesolutions_hosted_checkout" xsi:type="const">Magento\Merchantesolutions\Model\Ui\HostedCheckout\ConfigProvider::CODE</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Merchantesolutions\Block\Info">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item xsi:type="string" name="is_secure_mode">1</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Vault\Model\Ui\TokensConfigProvider">
+        <arguments>
+            <argument name="tokenUiComponentProviders" xsi:type="array">
+                <item name="merchantesolutions" xsi:type="object">Magento\Merchantesolutions\Model\Ui\TokenUiComponentProvider</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
