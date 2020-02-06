@@ -9,6 +9,7 @@ namespace Magento\Merchantesolutions\Gateway\Request\HostedCheckout\Sale;
 use Magento\Merchantesolutions\Api\Data\TransactionInterface as Transaction;
 use Magento\Merchantesolutions\Gateway\Config\Config;
 use Magento\Merchantesolutions\Gateway\Http\Data\Request;
+use Magento\Merchantesolutions\Gateway\Http\Data\Response;
 use Magento\Merchantesolutions\Gateway\SubjectReader;
 use Magento\Payment\Gateway\Request\BuilderInterface;
 use Magento\Payment\Helper\Formatter;
@@ -52,9 +53,11 @@ class PaymentDataBuilder implements BuilderInterface
             Request::FIELD_TRANSACTION_TYPE => 'D',
             Request::FIELD_TRANSACTION_AMOUNT => $this->formatPrice($this->subjectReader->readAmount($buildSubject)),
             Request::FIELD_CARD_ID => $payment->getAdditionalInformation(Transaction::CARD_ID),
-            Request::FIELD_TRANSACTION_ID => $payment->getAdditionalInformation(Transaction::TRAN_ID),
+            Request::FIELD_TRANSACTION_ID => $payment->getAdditionalInformation(Transaction::TRANSACTION_ID),
             Request::FIELD_MOTO_ECOMMERCE_IND => '7',
-            Request::FIELD_INVOICE_NUMBER => $payment->getOrder()->getIncrementId()
+            Request::FIELD_INVOICE_NUMBER => $payment->getOrder()->getIncrementId(),
+            Transaction::ERROR_CODE => $payment->getAdditionalInformation(Transaction::ERROR_CODE),
+            Transaction::AUTH_RESPONSE_TEXT => $payment->getAdditionalInformation(Transaction::AUTH_RESPONSE_TEXT)
         ];
     }
 }

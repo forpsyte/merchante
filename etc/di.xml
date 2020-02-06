@@ -59,7 +59,7 @@
         <arguments>
             <argument name="code" xsi:type="const">Magento\Merchantesolutions\Model\Ui\HostedCheckout\ConfigProvider::CODE</argument>
             <argument name="formBlockType" xsi:type="string">Magento\Payment\Block\Form\Cc</argument>
-            <argument name="infoBlockType" xsi:type="string">Magento\Merchantesolutions\Block\Info</argument>
+            <argument name="infoBlockType" xsi:type="string">Magento\Merchantesolutions\Block\HostedCheckout\Info</argument>
             <argument name="valueHandlerPool" xsi:type="object">MerchantesolutionsHostedCheckoutValueHandlerPool</argument>
             <argument name="validatorPool" xsi:type="object">MerchantesolutionsValidatorPool</argument>
             <argument name="commandPool" xsi:type="object">MerchantesolutionsHostedCheckoutCommandPool</argument>
@@ -128,7 +128,7 @@
             <argument name="commands" xsi:type="array">
                 <item name="authorize" xsi:type="string">MerchantesolutionsHostedCheckoutAuthorizeCommand</item>
                 <item name="sale" xsi:type="string">MerchantesolutionsHostedCheckoutSaleCommand</item>
-                <item name="capture" xsi:type="string">MerchantesolutionsCaptureStrategyCommand</item>
+                <item name="capture" xsi:type="string">MerchantesolutionsHostedCheckoutCaptureStrategyCommand</item>
                 <item name="settlement" xsi:type="string">MerchantesolutionsCaptureCommand</item>
                 <item name="void" xsi:type="string">MerchantesolutionsVoidCommand</item>
                 <item name="refund" xsi:type="string">MerchantesolutionsRefundCommand</item>
@@ -371,6 +371,7 @@
     <virtualType name="MerchantesolutionsHostedCheckoutSaleCommand" type="MerchantesolutionsHostedCheckoutAuthorizeCommand">
         <arguments>
             <argument name="requestBuilder" xsi:type="object">MerchantesolutionsHostedCheckoutSaleRequest</argument>
+            <argument name="client" xsi:type="object">Magento\Merchantesolutions\Gateway\Http\Client\HostedCheckoutTransaction</argument>
         </arguments>
     </virtualType>
     <!-- END Sale Command  -->
@@ -396,6 +397,12 @@
     <virtualType name="MerchantesolutionsCaptureStrategyCommand" type="Magento\Merchantesolutions\Gateway\Command\CaptureStrategyCommand">
         <arguments>
             <argument name="commandPool" xsi:type="object">MerchantesolutionsCommandPool</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="MerchantesolutionsHostedCheckoutCaptureStrategyCommand" type="Magento\Merchantesolutions\Gateway\Command\CaptureStrategyCommand">
+        <arguments>
+            <argument name="commandPool" xsi:type="object">MerchantesolutionsHostedCheckoutCommandPool</argument>
         </arguments>
     </virtualType>
     <!-- END Capture Strategy Command -->
@@ -514,6 +521,12 @@
             <argument name="config" xsi:type="object">Magento\Merchantesolutions\Gateway\Config\Config</argument>
         </arguments>
     </type>
+
+    <virtualType name="Magento\Merchantesolutions\Block\HostedCheckout\Info" type="Magento\Merchantesolutions\Block\Info">
+        <arguments>
+            <argument name="config" xsi:type="object">Magento\Merchantesolutions\Gateway\Config\HostedCheckout\Config</argument>
+        </arguments>
+    </virtualType>
 
     <type name="Magento\Config\Model\Config\TypePool">
         <arguments>

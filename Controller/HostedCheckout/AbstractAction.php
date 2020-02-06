@@ -13,7 +13,6 @@ use Magento\Framework\App\RequestInterface;
 use Magento\Framework\Controller\Result\Redirect;
 use Magento\Merchantesolutions\Api\Data\TransactionInterface;
 use Magento\Merchantesolutions\Gateway\Config\HostedCheckout\Config;
-use Magento\Merchantesolutions\Gateway\Http\Data\Response;
 use Magento\Quote\Api\Data\CartInterface;
 
 /**
@@ -22,8 +21,6 @@ use Magento\Quote\Api\Data\CartInterface;
  */
 abstract class AbstractAction extends Action
 {
-    const ERESP_QUOTE_ID = 'eresp_quoteid';
-
     /**
      * @var Config
      */
@@ -38,10 +35,12 @@ abstract class AbstractAction extends Action
      * @var array
      */
     protected $fieldMappings = [
-        self::ERESP_QUOTE_ID => TransactionInterface::QUOTE_ID,
-        TransactionInterface::RESP_CODE => Response::ERROR_CODE,
-        TransactionInterface::RESP_TEXT => Response::AUTH_RESPONSE_TEXT,
-        TransactionInterface::TRAN_ID => Response::TRANSACTION_ID
+        TransactionInterface::ERESP_QUOTE_ID => TransactionInterface::QUOTE_ID,
+        TransactionInterface::RESP_CODE => TransactionInterface::ERROR_CODE,
+        TransactionInterface::RESP_TEXT => TransactionInterface::AUTH_RESPONSE_TEXT,
+        TransactionInterface::TRAN_ID => TransactionInterface::TRANSACTION_ID,
+        TransactionInterface::ACCT_NUMBER => TransactionInterface::CC_NUMBER,
+        TransactionInterface::CARD_TYPE => TransactionInterface::CC_TYPE
     ];
 
     /**

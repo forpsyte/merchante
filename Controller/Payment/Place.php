@@ -15,6 +15,7 @@ use Magento\Framework\Controller\Result\JsonFactory;
 use Magento\Framework\Phrase;
 use Magento\Merchantesolutions\Controller\HostedCheckout\AbstractAction;
 use Magento\Merchantesolutions\Gateway\Config\HostedCheckout\Config;
+use Magento\Merchantesolutions\Model\Transaction;
 use Magento\Merchantesolutions\Model\TransactionFactory;
 use Magento\Merchantesolutions\Model\TransactionRepository;
 
@@ -116,7 +117,7 @@ class Place extends AbstractAction implements CsrfAwareActionInterface
     {
         $params = $request->getParams();
 
-        if (!array_key_exists(self::ERESP_QUOTE_ID, $params) || !$request->isSecure()) {
+        if (!array_key_exists(Transaction::ERESP_QUOTE_ID, $params) || !$request->isSecure()) {
             return false;
         }
 

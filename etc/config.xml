@@ -69,6 +69,7 @@
                 <profile_key backend_model="Magento\Config\Model\Config\Backend\Encrypted" />
                 <user_id/>
                 <useccv>1</useccv>
+                <cctypes_merchantesolutions_mapper><![CDATA[{"american-express":"AE","discover":"DI","jcb":"JCB","mastercard":"MC","master-card":"MC","visa":"VS","maestro":"MI","diners-club":"DN","unionpay":"UN"}]]></cctypes_merchantesolutions_mapper>
                 <gateway_url><![CDATA[https://www.merchante-solutions.com/jsp/tpg/secure_checkout.jsp]]></gateway_url>
                 <use_level_iii>0</use_level_iii>
                 <client_reference_number>Order #[orderid]</client_reference_number>

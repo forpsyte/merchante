@@ -54,10 +54,10 @@ class PaymentDataBuilder implements BuilderInterface
             Request::FIELD_TRANSACTION_AMOUNT => $this->formatPrice($this->subjectReader->readAmount($buildSubject)),
             Request::FIELD_CARD_ID => $payment->getAdditionalInformation(Transaction::CARD_ID),
             Request::FIELD_TRANSACTION_ID => $payment->getAdditionalInformation(Response::TRANSACTION_ID),
-            Response::ERROR_CODE => $payment->getAdditionalInformation(Response::ERROR_CODE),
-            Response::AUTH_RESPONSE_TEXT => $payment->getAdditionalInformation(Response::AUTH_RESPONSE_TEXT),
             Request::FIELD_MOTO_ECOMMERCE_IND => '7',
-            Request::FIELD_INVOICE_NUMBER => $payment->getOrder()->getIncrementId()
+            Request::FIELD_INVOICE_NUMBER => $payment->getOrder()->getIncrementId(),
+            Transaction::ERROR_CODE => $payment->getAdditionalInformation(Transaction::ERROR_CODE),
+            Transaction::AUTH_RESPONSE_TEXT => $payment->getAdditionalInformation(Transaction::AUTH_RESPONSE_TEXT)
         ];
     }
 }

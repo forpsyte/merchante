@@ -14,36 +14,28 @@ namespace Magento\Merchantesolutions\Api\Data;
 interface TransactionInterface
 {
     const ENTITY_ID = 'entity_id';
-
     const QUOTE_ID = 'quote_id';
-
     const TRAN_TYPE = 'tran_type';
-
     const TRAN_AMOUNT = 'tran_amount';
-
     const CARD_ID = 'card_id';
-
     const INVOICE_NUMBER = 'invoice_number';
-
     const CURRENCY_CODE = 'currency_code';
-
     const CLIENT_REF_NUMBER = 'client_ref_number';
-
     const ACCT_NUMBER = 'acct_number';
-
+    const CARD_TYPE = 'card_type';
     const EXP_DATE = 'exp_date';
-
     const RETRIEVAL_REF_NUMBER = 'retrieval_ref_number';
-
     const AUTH_CODE = 'auth_code';
-
     const RESP_CODE = 'resp_code';
-
     const RESP_TEXT = 'resp_text';
-
     const TRAN_ID = 'tran_id';
-
     const TRAN_DATE = 'tran_date';
+    const ERESP_QUOTE_ID = 'eresp_quoteid';
+    const ERROR_CODE = 'error_code';
+    const AUTH_RESPONSE_TEXT = 'auth_response_text';
+    const TRANSACTION_ID = 'transaction_id';
+    const CC_NUMBER = 'cc_number';
+    const CC_TYPE = 'cc_type';
 
     /**
      * Get transaction ID.
@@ -166,21 +158,6 @@ interface TransactionInterface
     public function setClientRefNumber($clientRefNumber);
 
     /**
-     * Get account number.
-     *
-     * @return string
-     */
-    public function getAcctNumber();
-
-    /**
-     * Set account number.
-     *
-     * @param string $acctNumber
-     * @return $this
-     */
-    public function setAcctNumber($acctNumber);
-
-    /**
      * Get expiration date.
      *
      * @return string
@@ -230,7 +207,7 @@ interface TransactionInterface
      *
      * @return string
      */
-    public function getRespCode();
+    public function getErrorCode();
 
     /**
      * Set response code.
@@ -238,14 +215,14 @@ interface TransactionInterface
      * @param string $respCode
      * @return $this
      */
-    public function setRespCode($respCode);
+    public function setErrorCode($respCode);
 
     /**
      * Get response text.
      *
      * @return string
      */
-    public function getRespText();
+    public function getAuthRespText();
 
     /**
      * Set response text.
@@ -253,14 +230,14 @@ interface TransactionInterface
      * @param string $respText
      * @return $this
      */
-    public function setRespText($respText);
+    public function setAuthRespText($respText);
 
     /**
      * Get transaction id.
      *
      * @return string
      */
-    public function getTranId();
+    public function getTransactionId();
 
     /**
      * Set transaction id.
@@ -268,7 +245,7 @@ interface TransactionInterface
      * @param string $tranId
      * @return $this
      */
-    public function setTranId($tranId);
+    public function setTransactionId($tranId);
 
     /**
      * Get the transaction date
@@ -284,4 +261,34 @@ interface TransactionInterface
      * @return $this
      */
     public function setTranDate($tranDate);
+
+    /**
+ * Get credit card number.
+ *
+ * @return string
+ */
+    public function getCcNumber();
+
+    /**
+     * Set credit card number.
+     *
+     * @param $ccNumber
+     * @return $this
+     */
+    public function setCcNumber($ccNumber);
+
+    /**
+     * Get credit card number.
+     *
+     * @return string
+     */
+    public function getCcType();
+
+    /**
+     * Set credit card number.
+     *
+     * @param $ccType
+     * @return $this
+     */
+    public function setCcType($ccType);
 }

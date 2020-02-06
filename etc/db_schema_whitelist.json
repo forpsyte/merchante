@@ -20,7 +20,9 @@
             "created_at": true,
             "error_code": true,
             "auth_response_text": true,
-            "transaction_id": true
+            "transaction_id": true,
+            "cc_number": true,
+            "cc_type": true
         },
         "constraint": {
             "PRIMARY": true

@@ -80,13 +80,6 @@ define(
                     }
                 }, this);
 
-                $(this.checkoutSelector).loader({
-                    icon: this.spinnerAssetUrl,
-                    texts: {
-                        loaderText: 'Please wait while your payment is being verified.'
-                    }
-                });
-
                 return self;
             },
 
@@ -138,6 +131,15 @@ define(
                 this.shipToLastName(shippingAddress.lastname);
             },
 
+            initLoader: function() {
+                $(this.checkoutSelector).loader({
+                    icon: this.spinnerAssetUrl,
+                    texts: {
+                        loaderText: 'Please wait while your payment is being verified.'
+                    }
+                });
+            },
+
             /**
              * Get code
              *
@@ -184,7 +186,7 @@ define(
              *
              */
             beforePlaceOrder: function() {
-              let form = $(this.getSelector('cc_form'));
+              this.initLoader();
               $(this.checkoutSelector).loader('show');
               this.paymentStatusInterval = setInterval(this.verifyPayment.bind(this), 5000);
               this.openWindow();
@@ -261,6 +263,7 @@ define(
                     success: function(response) {
                         if(response.success) {
                             setTimeout(function(){
+                                clearInterval(this.paymentStatusInterval);
                                 self.placeOrder();
                                 self.checkout.loader('hide');
                             }, 3000);

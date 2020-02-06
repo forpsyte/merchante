@@ -46,9 +46,9 @@ class DataAssignObserver extends AbstractDataAssignObserver
         Transaction::AUTH_CODE,
         Transaction::TRAN_AMOUNT,
         Transaction::TRAN_TYPE,
-        Response::ERROR_CODE,
-        Response::AUTH_RESPONSE_TEXT,
-        Response::TRANSACTION_ID
+        Transaction::ERROR_CODE,
+        Transaction::AUTH_RESPONSE_TEXT,
+        Transaction::TRANSACTION_ID
     ];
     /**
      * @var SearchCriteriaBuilder

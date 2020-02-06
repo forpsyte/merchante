@@ -163,17 +163,17 @@ class Transaction extends AbstractModel implements TransactionInterface
     /**
      * @inheritDoc
      */
-    public function getAcctNumber()
+    public function getCcNumber()
     {
-        return $this->getData(self::ACCT_NUMBER);
+        return $this->getData(self::CC_NUMBER);
     }
 
     /**
      * @inheritDoc
      */
-    public function setAcctNumber($acctNumber)
+    public function setCcNumber($ccNumber)
     {
-        return $this->setData(self::ACCT_NUMBER, $acctNumber);
+        return $this->setData(self::CC_NUMBER, $ccNumber);
     }
 
     /**
@@ -227,49 +227,49 @@ class Transaction extends AbstractModel implements TransactionInterface
     /**
      * @inheritDoc
      */
-    public function getRespCode()
+    public function getErrorCode()
     {
-        return $this->getData(self::RESP_CODE);
+        return $this->getData(self::ERROR_CODE);
     }
 
     /**
      * @inheritDoc
      */
-    public function setRespCode($respCode)
+    public function setErrorCode($respCode)
     {
-        return $this->setData(self::RESP_CODE, $respCode);
+        return $this->setData(self::ERROR_CODE, $respCode);
     }
 
     /**
      * @inheritDoc
      */
-    public function getRespText()
+    public function getAuthRespText()
     {
-        return $this->getData(self::RESP_TEXT);
+        return $this->getData(self::AUTH_RESPONSE_TEXT);
     }
 
     /**
      * @inheritDoc
      */
-    public function setRespText($respText)
+    public function setAuthRespText($respText)
     {
-        return $this->setData(self::RESP_TEXT, $respText);
+        return $this->setData(self::AUTH_RESPONSE_TEXT, $respText);
     }
 
     /**
      * @inheritDoc
      */
-    public function getTranId()
+    public function getTransactionId()
     {
-        return $this->getData(self::TRAN_ID);
+        return $this->getData(self::TRANSACTION_ID);
     }
 
     /**
      * @inheritDoc
      */
-    public function setTranId($tranId)
+    public function setTransactionId($tranId)
     {
-        return $this->setData(self::TRAN_ID, $tranId);
+        return $this->setData(self::TRANSACTION_ID, $tranId);
     }
 
     /**
@@ -286,5 +286,21 @@ class Transaction extends AbstractModel implements TransactionInterface
     public function setTranDate($tranDate)
     {
         return $this->setData(self::TRAN_DATE, $tranDate);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getCcType()
+    {
+        return $this->getData(self::CC_TYPE);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function setCcType($ccType)
+    {
+        return $this->setData(self::CC_TYPE, $ccType);
     }
 }

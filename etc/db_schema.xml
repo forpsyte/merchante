@@ -3,8 +3,7 @@
     <table name="merchantesolutions_transaction" resource="default" engine="innodb" comment="Merchant e-Solutions Table">
         <column xsi:type="int" name="entity_id" padding="10" unsigned="true" nullable="false" identity="true"
                 comment="Entity ID"/>
-        <column xsi:type="varchar" name="quote_id" length="64" nullable="false"
-                identity="false" comment="Quote ID"/>
+        <column xsi:type="varchar" name="quote_id" length="64" nullable="false" comment="Quote ID"/>
         <column xsi:type="varchar" name="tran_type" nullable="true" length="8" comment="Transaction Type"/>
         <column xsi:type="decimal" name="tran_amount" scale="4" precision="20" unsigned="false" nullable="true"
                 default="0" comment="Transaction Amount"/>
@@ -13,7 +12,8 @@
         <column xsi:type="varchar" name="currency_code" nullable="true" length="64" comment="Currency Code"/>
         <column xsi:type="varchar" name="client_ref_number" nullable="true" length="64"
                 comment="Client Reference Number"/>
-        <column xsi:type="varchar" name="acct_number" nullable="true" length="64" comment="Account Number"/>
+        <column xsi:type="varchar" name="cc_number" nullable="true" length="64" comment="Account Number" onCreate="migrateDataFrom(acct_number)"/>
+        <column xsi:type="varchar" name="cc_type" nullable="true" length="3" comment="Credit Card Type"/>
         <column xsi:type="varchar" name="exp_date" nullable="true" length="64" comment="Expiration Date"/>
         <column xsi:type="varchar" name="retrieval_ref_number" nullable="true" length="64"
                 comment="Retrieval Reference Number"/>
