@@ -4,14 +4,14 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Gateway\Response;
+namespace Merchante\Merchante\Gateway\Response;
 
 use Exception;
 use Magento\Framework\App\ObjectManager;
 use Magento\Framework\Serialize\Serializer\Json;
-use Magento\Merchantesolutions\Gateway\Http\Data\Response;
-use Magento\Merchantesolutions\Observer\DataAssignObserver;
-use Magento\Merchantesolutions\Gateway\SubjectReader;
+use Merchante\Merchante\Gateway\Http\Data\Response;
+use Merchante\Merchante\Observer\DataAssignObserver;
+use Merchante\Merchante\Gateway\SubjectReader;
 use Magento\Payment\Gateway\Response\HandlerInterface;
 use Magento\Sales\Api\Data\OrderPaymentExtensionInterface;
 use Magento\Sales\Api\Data\OrderPaymentExtensionInterfaceFactory;
@@ -22,7 +22,7 @@ use Magento\Vault\Api\Data\PaymentTokenInterface;
 
 /**
  * Class VaultDetailsHandler
- * @package Magento\Merchantesolutions\Gateway\Response
+ * @package Merchante\Merchante\Gateway\Response
  */
 class VaultDetailsHandler implements HandlerInterface
 {

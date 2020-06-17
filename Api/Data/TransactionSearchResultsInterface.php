@@ -4,21 +4,21 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Api\Data;
+namespace Merchante\Merchante\Api\Data;
 
 use Magento\Framework\Api\SearchResultsInterface;
 
 /**
  * Interface TransactionSearchResultsInterface
  * @api
- * @package Magento\Merchantesolutions\Api\Data
+ * @package Merchante\Merchante\Api\Data
  */
 interface TransactionSearchResultsInterface extends SearchResultsInterface
 {
     /**
      * Get transactions list.
      *
-     * @return \Magento\Merchantesolutions\Api\Data\TransactionInterface[]
+     * @return \Merchante\Merchante\Api\Data\TransactionInterface[]
      */
     public function getItems();
 

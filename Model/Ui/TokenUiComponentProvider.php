@@ -3,7 +3,7 @@
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace Magento\Merchantesolutions\Model\Ui;
+namespace Merchante\Merchante\Model\Ui;
 
 use Magento\Vault\Api\Data\PaymentTokenInterface;
 use Magento\Vault\Model\Ui\TokenUiComponentInterface;
@@ -46,7 +46,7 @@ class TokenUiComponentProvider implements TokenUiComponentProviderInterface
                     TokenUiComponentProviderInterface::COMPONENT_DETAILS => $jsonDetails,
                     TokenUiComponentProviderInterface::COMPONENT_PUBLIC_HASH => $paymentToken->getPublicHash()
                 ],
-                'name' => 'Magento_Merchantesolutions/js/view/payment/method-renderer/vault'
+                'name' => 'Merchante_Merchante/js/view/payment/method-renderer/vault'
             ]
         );
 

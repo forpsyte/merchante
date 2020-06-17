@@ -4,16 +4,16 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Gateway\Validator;
+namespace Merchante\Merchante\Gateway\Validator;
 
-use Magento\Merchantesolutions\Gateway\Http\Data\Response;
-use Magento\Merchantesolutions\Gateway\SubjectReader;
+use Merchante\Merchante\Gateway\Http\Data\Response;
+use Merchante\Merchante\Gateway\SubjectReader;
 use Magento\Payment\Gateway\Validator\AbstractValidator;
 use Magento\Payment\Gateway\Validator\ResultInterfaceFactory;
 
 /**
  * Class ResponseValidator
- * @package Magento\Merchantesolutions\Gateway\Validator
+ * @package Merchante\Merchante\Gateway\Validator
  */
 class ResponseValidator extends AbstractValidator
 {

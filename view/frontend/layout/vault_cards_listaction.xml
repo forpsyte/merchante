@@ -9,7 +9,7 @@
     <body>
         <referenceContainer name="content">
             <referenceBlock name="vault.cards.list">
-                <block class="Magento\Merchantesolutions\Block\Customer\CardRenderer" name="merchantesolutions.card.renderer" template="Magento_Vault::customer_account/credit_card.phtml"/>
+                <block class="Merchante\Merchante\Block\Customer\CardRenderer" name="merchante.card.renderer" template="Magento_Vault::customer_account/credit_card.phtml"/>
             </referenceBlock>
         </referenceContainer>
     </body>

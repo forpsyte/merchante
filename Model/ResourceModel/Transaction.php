@@ -4,13 +4,13 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Model\ResourceModel;
+namespace Merchante\Merchante\Model\ResourceModel;
 
 use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 
 /**
  * Class Transaction
- * @package Magento\Merchantesolutions\Model\ResourceModel
+ * @package Merchante\Merchante\Model\ResourceModel
  */
 class Transaction extends AbstractDb
 {
@@ -20,6 +20,6 @@ class Transaction extends AbstractDb
      */
     protected function _construct()
     {
-        $this->_init('merchantesolutions_transaction', 'entity_id');
+        $this->_init('merchante_transaction', 'entity_id');
     }
 }

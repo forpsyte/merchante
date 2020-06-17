@@ -16,14 +16,14 @@ define(
         'use strict';
 
         let config = window.checkoutConfig.payment,
-            mesGatewayType = 'merchantesolutions',
-            mesHostedCheckoutType = 'merchantesolutions_hosted_checkout';
+            mesGatewayType = 'merchante',
+            mesHostedCheckoutType = 'merchante_hosted_checkout';
 
         if (config[mesGatewayType].isActive) {
             rendererList.push(
                 {
                     type: mesGatewayType,
-                    component: 'Magento_Merchantesolutions/js/view/payment/method-renderer/cc-form'
+                    component: 'Merchante_Merchante/js/view/payment/method-renderer/cc-form'
                 }
             );
         }
@@ -32,7 +32,7 @@ define(
             rendererList.push(
                 {
                     type: mesHostedCheckoutType,
-                    component: 'Magento_Merchantesolutions/js/view/payment/method-renderer/hosted-checkout-form'
+                    component: 'Merchante_Merchante/js/view/payment/method-renderer/hosted-checkout-form'
                 }
             );
         }

@@ -9,194 +9,194 @@
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
 
     <!-- Class Preferences -->
-    <preference for="Magento\Merchantesolutions\Api\TransactionRepositoryInterface" type="Magento\Merchantesolutions\Model\TransactionRepository"/>
-    <preference for="Magento\Merchantesolutions\Api\Data\TransactionInterface" type="Magento\Merchantesolutions\Model\Transaction" />
-    <preference for="Magento\Merchantesolutions\Api\Data\TransactionSearchResultsInterface" type="Magento\Framework\Api\SearchResults" />
+    <preference for="Merchante\Merchante\Api\TransactionRepositoryInterface" type="Merchante\Merchante\Model\TransactionRepository"/>
+    <preference for="Merchante\Merchante\Api\Data\TransactionInterface" type="Merchante\Merchante\Model\Transaction" />
+    <preference for="Merchante\Merchante\Api\Data\TransactionSearchResultsInterface" type="Magento\Framework\Api\SearchResults" />
 
     <!-- Payment Method Facade configuration -->
-    <virtualType name="MerchantesolutionsFacade" type="Magento\Payment\Model\Method\Adapter">
+    <virtualType name="MerchanteFacade" type="Magento\Payment\Model\Method\Adapter">
         <arguments>
-            <argument name="code" xsi:type="const">Magento\Merchantesolutions\Model\Ui\ConfigProvider::CODE</argument>
+            <argument name="code" xsi:type="const">Merchante\Merchante\Model\Ui\ConfigProvider::CODE</argument>
             <argument name="formBlockType" xsi:type="string">Magento\Payment\Block\Form\Cc</argument>
-            <argument name="infoBlockType" xsi:type="string">Magento\Merchantesolutions\Block\Info</argument>
-            <argument name="valueHandlerPool" xsi:type="object">MerchantesolutionsValueHandlerPool</argument>
-            <argument name="validatorPool" xsi:type="object">MerchantesolutionsValidatorPool</argument>
-            <argument name="commandPool" xsi:type="object">MerchantesolutionsCommandPool</argument>
+            <argument name="infoBlockType" xsi:type="string">Merchante\Merchante\Block\Info</argument>
+            <argument name="valueHandlerPool" xsi:type="object">MerchanteValueHandlerPool</argument>
+            <argument name="validatorPool" xsi:type="object">MerchanteValidatorPool</argument>
+            <argument name="commandPool" xsi:type="object">MerchanteCommandPool</argument>
         </arguments>
     </virtualType>
     <!-- END Payment Method Facade configuration -->
 
     <!-- Configuration for vault payments -->
-    <virtualType name="MerchantesolutionsVaultPaymentConfig" type="Magento\Payment\Gateway\Config\Config">
+    <virtualType name="MerchanteVaultPaymentConfig" type="Magento\Payment\Gateway\Config\Config">
         <arguments>
-            <argument name="methodCode" xsi:type="const">Magento\Merchantesolutions\Model\Ui\ConfigProvider::CC_VAULT_CODE</argument>
+            <argument name="methodCode" xsi:type="const">Merchante\Merchante\Model\Ui\ConfigProvider::CC_VAULT_CODE</argument>
         </arguments>
     </virtualType>
-    <virtualType name="MerchantesolutionsVaultPaymentValueHandler" type="VaultPaymentDefaultValueHandler">
+    <virtualType name="MerchanteVaultPaymentValueHandler" type="VaultPaymentDefaultValueHandler">
         <arguments>
-            <argument name="configInterface" xsi:type="object">MerchantesolutionsVaultPaymentConfig</argument>
+            <argument name="configInterface" xsi:type="object">MerchanteVaultPaymentConfig</argument>
         </arguments>
     </virtualType>
-    <virtualType name="MerchantesolutionsVaultPaymentValueHandlerPool" type="VaultPaymentValueHandlerPool">
+    <virtualType name="MerchanteVaultPaymentValueHandlerPool" type="VaultPaymentValueHandlerPool">
         <arguments>
             <argument name="handlers" xsi:type="array">
-                <item name="default" xsi:type="string">MerchantesolutionsVaultPaymentValueHandler</item>
+                <item name="default" xsi:type="string">MerchanteVaultPaymentValueHandler</item>
             </argument>
         </arguments>
     </virtualType>
-    <virtualType name="MerchantesolutionsCreditCardVaultFacade" type="Magento\Vault\Model\Method\Vault">
+    <virtualType name="MerchanteCreditCardVaultFacade" type="Magento\Vault\Model\Method\Vault">
         <arguments>
-            <argument name="config" xsi:type="object">MerchantesolutionsVaultPaymentConfig</argument>
-            <argument name="valueHandlerPool" xsi:type="object">MerchantesolutionsVaultPaymentValueHandlerPool</argument>
-            <argument name="vaultProvider" xsi:type="object">MerchantesolutionsFacade</argument>
-            <argument name="code" xsi:type="const">Magento\Merchantesolutions\Model\Ui\ConfigProvider::CC_VAULT_CODE</argument>
+            <argument name="config" xsi:type="object">MerchanteVaultPaymentConfig</argument>
+            <argument name="valueHandlerPool" xsi:type="object">MerchanteVaultPaymentValueHandlerPool</argument>
+            <argument name="vaultProvider" xsi:type="object">MerchanteFacade</argument>
+            <argument name="code" xsi:type="const">Merchante\Merchante\Model\Ui\ConfigProvider::CC_VAULT_CODE</argument>
         </arguments>
     </virtualType>
     <!-- END Configuration for vault payments -->
 
     <!-- Configuration for hosted checkout payments -->
-    <virtualType name="MerchantesolutionsHostedCheckoutFacade" type="Magento\Payment\Model\Method\Adapter">
+    <virtualType name="MerchanteHostedCheckoutFacade" type="Magento\Payment\Model\Method\Adapter">
         <arguments>
-            <argument name="code" xsi:type="const">Magento\Merchantesolutions\Model\Ui\HostedCheckout\ConfigProvider::CODE</argument>
+            <argument name="code" xsi:type="const">Merchante\Merchante\Model\Ui\HostedCheckout\ConfigProvider::CODE</argument>
             <argument name="formBlockType" xsi:type="string">Magento\Payment\Block\Form\Cc</argument>
-            <argument name="infoBlockType" xsi:type="string">Magento\Merchantesolutions\Block\HostedCheckout\Info</argument>
-            <argument name="valueHandlerPool" xsi:type="object">MerchantesolutionsHostedCheckoutValueHandlerPool</argument>
-            <argument name="validatorPool" xsi:type="object">MerchantesolutionsValidatorPool</argument>
-            <argument name="commandPool" xsi:type="object">MerchantesolutionsHostedCheckoutCommandPool</argument>
+            <argument name="infoBlockType" xsi:type="string">Merchante\Merchante\Block\HostedCheckout\Info</argument>
+            <argument name="valueHandlerPool" xsi:type="object">MerchanteHostedCheckoutValueHandlerPool</argument>
+            <argument name="validatorPool" xsi:type="object">MerchanteValidatorPool</argument>
+            <argument name="commandPool" xsi:type="object">MerchanteHostedCheckoutCommandPool</argument>
         </arguments>
     </virtualType>
     <!-- END Configuration for hosted checkout payments -->
 
     <!-- Helper configurations -->
-    <type name="Magento\Merchantesolutions\Helper\Data">
+    <type name="Merchante\Merchante\Helper\Data">
         <arguments>
             <argument name="methods" xsi:type="array">
-                <item name="merchantesolutions" xsi:type="const">Magento\Merchantesolutions\Model\Ui\ConfigProvider::CODE</item>
-                <item name="merchantesolutions_cc_vault" xsi:type="const">Magento\Merchantesolutions\Model\Ui\ConfigProvider::CC_VAULT_CODE</item>
-                <item name="merchantesolutions_hosted_checkout" xsi:type="const">Magento\Merchantesolutions\Model\Ui\HostedCheckout\ConfigProvider::CODE</item>
+                <item name="merchante" xsi:type="const">Merchante\Merchante\Model\Ui\ConfigProvider::CODE</item>
+                <item name="merchante_cc_vault" xsi:type="const">Merchante\Merchante\Model\Ui\ConfigProvider::CC_VAULT_CODE</item>
+                <item name="merchante_hosted_checkout" xsi:type="const">Merchante\Merchante\Model\Ui\HostedCheckout\ConfigProvider::CODE</item>
             </argument>
         </arguments>
     </type>
     <!-- END Helper configurations -->
 
     <!-- Configuration reader -->
-    <type name="Magento\Merchantesolutions\Gateway\Config\Config">
+    <type name="Merchante\Merchante\Gateway\Config\Config">
         <arguments>
-            <argument name="methodCode" xsi:type="const">Magento\Merchantesolutions\Model\Ui\ConfigProvider::CODE</argument>
+            <argument name="methodCode" xsi:type="const">Merchante\Merchante\Model\Ui\ConfigProvider::CODE</argument>
         </arguments>
     </type>
 
-    <type name="Magento\Merchantesolutions\Gateway\Config\HostedCheckout\Config">
+    <type name="Merchante\Merchante\Gateway\Config\HostedCheckout\Config">
         <arguments>
-            <argument name="methodCode" xsi:type="const">Magento\Merchantesolutions\Model\Ui\HostedCheckout\ConfigProvider::CODE</argument>
+            <argument name="methodCode" xsi:type="const">Merchante\Merchante\Model\Ui\HostedCheckout\ConfigProvider::CODE</argument>
         </arguments>
     </type>
     <!-- END Configuration reader -->
 
-    <!-- Logger, initialized with Merchantesolutions -->
-    <virtualType name="MerchantesolutionsLoggerForTransaction" type="Magento\Payment\Model\Method\Logger">
+    <!-- Logger, initialized with Merchante -->
+    <virtualType name="MerchanteLoggerForTransaction" type="Magento\Payment\Model\Method\Logger">
         <arguments>
-            <argument name="config" xsi:type="object">Magento\Merchantesolutions\Gateway\Config\Config</argument>
+            <argument name="config" xsi:type="object">Merchante\Merchante\Gateway\Config\Config</argument>
         </arguments>
     </virtualType>
-    <type name="Magento\Merchantesolutions\Gateway\Http\Client\Transaction">
+    <type name="Merchante\Merchante\Gateway\Http\Client\Transaction">
         <arguments>
-            <argument name="customLogger" xsi:type="object">MerchantesolutionsLoggerForTransaction</argument>
+            <argument name="customLogger" xsi:type="object">MerchanteLoggerForTransaction</argument>
         </arguments>
     </type>
-    <!-- END Logger, initialized with Merchantesolutions -->
+    <!-- END Logger, initialized with Merchante -->
 
     <!-- Commands infrastructure -->
-    <virtualType name="MerchantesolutionsCommandPool" type="Magento\Payment\Gateway\Command\CommandPool">
+    <virtualType name="MerchanteCommandPool" type="Magento\Payment\Gateway\Command\CommandPool">
         <arguments>
             <argument name="commands" xsi:type="array">
-                <item name="authorize" xsi:type="string">MerchantesolutionsAuthorizeCommand</item>
-                <item name="sale" xsi:type="string">MerchantesolutionsSaleCommand</item>
-                <item name="capture" xsi:type="string">MerchantesolutionsCaptureStrategyCommand</item>
-                <item name="settlement" xsi:type="string">MerchantesolutionsCaptureCommand</item>
-                <item name="void" xsi:type="string">MerchantesolutionsVoidCommand</item>
-                <item name="refund" xsi:type="string">MerchantesolutionsRefundCommand</item>
-                <item name="cancel" xsi:type="string">Magento\Merchantesolutions\Gateway\CancelCommand</item>
-                <item name="vault_authorize" xsi:type="string">MerchantesolutionsVaultAuthorizeCommand</item>
-                <item name="vault_sale" xsi:type="string">MerchantesolutionsVaultSaleCommand</item>
+                <item name="authorize" xsi:type="string">MerchanteAuthorizeCommand</item>
+                <item name="sale" xsi:type="string">MerchanteSaleCommand</item>
+                <item name="capture" xsi:type="string">MerchanteCaptureStrategyCommand</item>
+                <item name="settlement" xsi:type="string">MerchanteCaptureCommand</item>
+                <item name="void" xsi:type="string">MerchanteVoidCommand</item>
+                <item name="refund" xsi:type="string">MerchanteRefundCommand</item>
+                <item name="cancel" xsi:type="string">Merchante\Merchante\Gateway\CancelCommand</item>
+                <item name="vault_authorize" xsi:type="string">MerchanteVaultAuthorizeCommand</item>
+                <item name="vault_sale" xsi:type="string">MerchanteVaultSaleCommand</item>
             </argument>
         </arguments>
     </virtualType>
 
-    <virtualType name="MerchantesolutionsHostedCheckoutCommandPool" type="Magento\Payment\Gateway\Command\CommandPool">
+    <virtualType name="MerchanteHostedCheckoutCommandPool" type="Magento\Payment\Gateway\Command\CommandPool">
         <arguments>
             <argument name="commands" xsi:type="array">
-                <item name="authorize" xsi:type="string">MerchantesolutionsHostedCheckoutAuthorizeCommand</item>
-                <item name="sale" xsi:type="string">MerchantesolutionsHostedCheckoutSaleCommand</item>
-                <item name="capture" xsi:type="string">MerchantesolutionsHostedCheckoutCaptureStrategyCommand</item>
-                <item name="settlement" xsi:type="string">MerchantesolutionsCaptureCommand</item>
-                <item name="void" xsi:type="string">MerchantesolutionsVoidCommand</item>
-                <item name="refund" xsi:type="string">MerchantesolutionsRefundCommand</item>
-                <item name="cancel" xsi:type="string">Magento\Merchantesolutions\Gateway\CancelCommand</item>
+                <item name="authorize" xsi:type="string">MerchanteHostedCheckoutAuthorizeCommand</item>
+                <item name="sale" xsi:type="string">MerchanteHostedCheckoutSaleCommand</item>
+                <item name="capture" xsi:type="string">MerchanteHostedCheckoutCaptureStrategyCommand</item>
+                <item name="settlement" xsi:type="string">MerchanteCaptureCommand</item>
+                <item name="void" xsi:type="string">MerchanteVoidCommand</item>
+                <item name="refund" xsi:type="string">MerchanteRefundCommand</item>
+                <item name="cancel" xsi:type="string">Merchante\Merchante\Gateway\CancelCommand</item>
             </argument>
         </arguments>
     </virtualType>
     <!-- END Commands infrastructure -->
 
     <!-- Command managers section for Vault -->
-    <virtualType name="MerchantesolutionsCommandManager" type="Magento\Payment\Gateway\Command\CommandManager">
+    <virtualType name="MerchanteCommandManager" type="Magento\Payment\Gateway\Command\CommandManager">
         <arguments>
-            <argument name="commandPool" xsi:type="object">MerchantesolutionsCommandPool</argument>
+            <argument name="commandPool" xsi:type="object">MerchanteCommandPool</argument>
         </arguments>
     </virtualType>
     <type name="Magento\Payment\Gateway\Command\CommandManagerPool">
         <arguments>
             <argument name="executors" xsi:type="array">
-                <item name="merchantesolutions" xsi:type="string">MerchantesolutionsCommandManager</item>
+                <item name="merchante" xsi:type="string">MerchanteCommandManager</item>
             </argument>
         </arguments>
     </type>
     <!-- END Command managers section for Vault -->
 
     <!-- Error Mapping -->
-    <virtualType name="Magento\Merchantesolutions\Gateway\ErrorMapper\VirtualConfigReader" type="Magento\Payment\Gateway\ErrorMapper\VirtualConfigReader">
+    <virtualType name="Merchante\Merchante\Gateway\ErrorMapper\VirtualConfigReader" type="Magento\Payment\Gateway\ErrorMapper\VirtualConfigReader">
         <arguments>
-            <argument name="fileName" xsi:type="string">merchantesolutions_error_mapping.xml</argument>
+            <argument name="fileName" xsi:type="string">merchante_error_mapping.xml</argument>
         </arguments>
     </virtualType>
-    <virtualType name="Magento\Merchantesolutions\Gateway\ErrorMapper\VirtualMappingData" type="Magento\Payment\Gateway\ErrorMapper\MappingData">
+    <virtualType name="Merchante\Merchante\Gateway\ErrorMapper\VirtualMappingData" type="Magento\Payment\Gateway\ErrorMapper\MappingData">
         <arguments>
-            <argument name="reader" xsi:type="object">Magento\Merchantesolutions\Gateway\ErrorMapper\VirtualConfigReader</argument>
-            <argument name="cacheId" xsi:type="string">merchantesolutions_error_mapper</argument>
+            <argument name="reader" xsi:type="object">Merchante\Merchante\Gateway\ErrorMapper\VirtualConfigReader</argument>
+            <argument name="cacheId" xsi:type="string">merchante_error_mapper</argument>
         </arguments>
     </virtualType>
-    <virtualType name="Magento\Merchantesolutions\Gateway\ErrorMapper\VirtualErrorMessageMapper" type="Magento\Payment\Gateway\ErrorMapper\ErrorMessageMapper">
+    <virtualType name="Merchante\Merchante\Gateway\ErrorMapper\VirtualErrorMessageMapper" type="Magento\Payment\Gateway\ErrorMapper\ErrorMessageMapper">
         <arguments>
-            <argument name="messageMapping" xsi:type="object">Magento\Merchantesolutions\Gateway\ErrorMapper\VirtualMappingData</argument>
+            <argument name="messageMapping" xsi:type="object">Merchante\Merchante\Gateway\ErrorMapper\VirtualMappingData</argument>
         </arguments>
     </virtualType>
     <!-- END Error Mapping -->
 
     <!-- Authorize Transaction Request -->
-    <virtualType name="MerchantesolutionsAuthorizeRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
+    <virtualType name="MerchanteAuthorizeRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
         <arguments>
             <argument name="builders" xsi:type="array">
-                <item name="payment" xsi:type="string">Magento\Merchantesolutions\Gateway\Request\Authorize\PaymentDataBuilder</item>
-                <item name="address" xsi:type="string">Magento\Merchantesolutions\Gateway\Request\AddressDataBuilder</item>
-                <item name="vault" xsi:type="string">Magento\Merchantesolutions\Gateway\Request\VaultDataBuilder</item>
+                <item name="payment" xsi:type="string">Merchante\Merchante\Gateway\Request\Authorize\PaymentDataBuilder</item>
+                <item name="address" xsi:type="string">Merchante\Merchante\Gateway\Request\AddressDataBuilder</item>
+                <item name="vault" xsi:type="string">Merchante\Merchante\Gateway\Request\VaultDataBuilder</item>
             </argument>
         </arguments>
     </virtualType>
 
-    <virtualType name="MerchantesolutionsVaultAuthorizeRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
+    <virtualType name="MerchanteVaultAuthorizeRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
         <arguments>
             <argument name="builders" xsi:type="array">
-                <item name="payment" xsi:type="string">Magento\Merchantesolutions\Gateway\Request\Authorize\VaultDataBuilder</item>
-                <item name="address" xsi:type="string">Magento\Merchantesolutions\Gateway\Request\AddressDataBuilder</item>
+                <item name="payment" xsi:type="string">Merchante\Merchante\Gateway\Request\Authorize\VaultDataBuilder</item>
+                <item name="address" xsi:type="string">Merchante\Merchante\Gateway\Request\AddressDataBuilder</item>
             </argument>
         </arguments>
     </virtualType>
 
-    <virtualType name="MerchantesolutionsHostedCheckoutAuthorizeRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
+    <virtualType name="MerchanteHostedCheckoutAuthorizeRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
         <arguments>
             <argument name="builders" xsi:type="array">
-                <item name="payment" xsi:type="string">Magento\Merchantesolutions\Gateway\Request\HostedCheckout\Authorize\PaymentDataBuilder</item>
-                <item name="address" xsi:type="string">Magento\Merchantesolutions\Gateway\Request\AddressDataBuilder</item>
+                <item name="payment" xsi:type="string">Merchante\Merchante\Gateway\Request\HostedCheckout\Authorize\PaymentDataBuilder</item>
+                <item name="address" xsi:type="string">Merchante\Merchante\Gateway\Request\AddressDataBuilder</item>
             </argument>
         </arguments>
     </virtualType>
@@ -204,354 +204,354 @@
     <!-- END Authorize Transaction Request -->
 
     <!-- Sale Transaction Request -->
-    <virtualType name="MerchantesolutionsSaleRequest" type="Magento\Merchantesolutions\Gateway\Request\BuilderComposite">
+    <virtualType name="MerchanteSaleRequest" type="Merchante\Merchante\Gateway\Request\BuilderComposite">
         <arguments>
             <argument name="builders" xsi:type="array">
-                <item name="payment" xsi:type="string">Magento\Merchantesolutions\Gateway\Request\Sale\PaymentDataBuilder</item>
-                <item name="address" xsi:type="string">Magento\Merchantesolutions\Gateway\Request\AddressDataBuilder</item>
-                <item name="l3processing" xsi:type="string">MerchantesolutionsLevelThreeProcessingRequest</item>
-                <item name="vault" xsi:type="string">Magento\Merchantesolutions\Gateway\Request\VaultDataBuilder</item>
+                <item name="payment" xsi:type="string">Merchante\Merchante\Gateway\Request\Sale\PaymentDataBuilder</item>
+                <item name="address" xsi:type="string">Merchante\Merchante\Gateway\Request\AddressDataBuilder</item>
+                <item name="l3processing" xsi:type="string">MerchanteLevelThreeProcessingRequest</item>
+                <item name="vault" xsi:type="string">Merchante\Merchante\Gateway\Request\VaultDataBuilder</item>
             </argument>
         </arguments>
     </virtualType>
 
-    <virtualType name="MerchantesolutionsVaultSaleRequest" type="Magento\Merchantesolutions\Gateway\Request\BuilderComposite">
+    <virtualType name="MerchanteVaultSaleRequest" type="Merchante\Merchante\Gateway\Request\BuilderComposite">
         <arguments>
             <argument name="builders" xsi:type="array">
-                <item name="payment" xsi:type="string">Magento\Merchantesolutions\Gateway\Request\Sale\VaultDataBuilder</item>
-                <item name="address" xsi:type="string">Magento\Merchantesolutions\Gateway\Request\AddressDataBuilder</item>
-                <item name="l3processing" xsi:type="string">MerchantesolutionsLevelThreeProcessingRequest</item>
+                <item name="payment" xsi:type="string">Merchante\Merchante\Gateway\Request\Sale\VaultDataBuilder</item>
+                <item name="address" xsi:type="string">Merchante\Merchante\Gateway\Request\AddressDataBuilder</item>
+                <item name="l3processing" xsi:type="string">MerchanteLevelThreeProcessingRequest</item>
             </argument>
         </arguments>
     </virtualType>
 
-    <virtualType name="MerchantesolutionsHostedCheckoutSaleRequest" type="Magento\Merchantesolutions\Gateway\Request\BuilderComposite">
+    <virtualType name="MerchanteHostedCheckoutSaleRequest" type="Merchante\Merchante\Gateway\Request\BuilderComposite">
         <arguments>
             <argument name="builders" xsi:type="array">
-                <item name="payment" xsi:type="string">Magento\Merchantesolutions\Gateway\Request\HostedCheckout\Sale\PaymentDataBuilder</item>
-                <item name="address" xsi:type="string">Magento\Merchantesolutions\Gateway\Request\AddressDataBuilder</item>
+                <item name="payment" xsi:type="string">Merchante\Merchante\Gateway\Request\HostedCheckout\Sale\PaymentDataBuilder</item>
+                <item name="address" xsi:type="string">Merchante\Merchante\Gateway\Request\AddressDataBuilder</item>
             </argument>
         </arguments>
     </virtualType>
     <!-- END Sale Transaction Request -->
 
     <!-- Capture Transaction Request -->
-    <virtualType name="MerchantesolutionsCaptureRequest" type="MerchantesolutionsSaleRequest">
+    <virtualType name="MerchanteCaptureRequest" type="MerchanteSaleRequest">
         <arguments>
             <argument name="builders" xsi:type="array">
-                <item name="payment" xsi:type="string">Magento\Merchantesolutions\Gateway\Request\Capture\PaymentDataBuilder</item>
+                <item name="payment" xsi:type="string">Merchante\Merchante\Gateway\Request\Capture\PaymentDataBuilder</item>
             </argument>
         </arguments>
     </virtualType>
 
-    <virtualType name="MerchantesolutionsHostedCheckoutCaptureRequest" type="MerchantesolutionsHostedCheckoutSaleRequest">
+    <virtualType name="MerchanteHostedCheckoutCaptureRequest" type="MerchanteHostedCheckoutSaleRequest">
         <arguments>
             <argument name="builders" xsi:type="array">
-                <item name="payment" xsi:type="string">Magento\Merchantesolutions\Gateway\Request\HostedCheckout\Capture\PaymentDataBuilder</item>
+                <item name="payment" xsi:type="string">Merchante\Merchante\Gateway\Request\HostedCheckout\Capture\PaymentDataBuilder</item>
             </argument>
         </arguments>
     </virtualType>
     <!-- END Capture Transaction Request -->
 
     <!-- Refund Transaction Request -->
-    <virtualType name="MerchantesolutionsRefundRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
+    <virtualType name="MerchanteRefundRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
         <arguments>
             <argument name="builders" xsi:type="array">
-                <item name="payment" xsi:type="string">Magento\Merchantesolutions\Gateway\Request\Refund\PaymentDataBuilder</item>
+                <item name="payment" xsi:type="string">Merchante\Merchante\Gateway\Request\Refund\PaymentDataBuilder</item>
             </argument>
         </arguments>
     </virtualType>
     <!-- END Refund Transaction Request -->
 
     <!-- Void Transaction Request -->
-    <virtualType name="MerchantesolutionsVoidRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
+    <virtualType name="MerchanteVoidRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
         <arguments>
             <argument name="builders" xsi:type="array">
-                <item name="payment" xsi:type="string">Magento\Merchantesolutions\Gateway\Request\Void\PaymentDataBuilder</item>
+                <item name="payment" xsi:type="string">Merchante\Merchante\Gateway\Request\Void\PaymentDataBuilder</item>
             </argument>
         </arguments>
     </virtualType>
     <!-- END Void Transaction Request -->
 
     <!-- Level 3 Processing Request -->
-    <virtualType name="MerchantesolutionsLevelThreeProcessingRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
+    <virtualType name="MerchanteLevelThreeProcessingRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
         <arguments>
             <argument name="builders" xsi:type="array">
-                <item name="payment" xsi:type="string">MerchantesolutionsLevelThreeProcessingPaymentStrategyRequest</item>
-                <item name="items" xsi:type="string">MerchantesolutionsLevelThreeProcessingItemsStrategyRequest</item>
-                <item name="customer" xsi:type="string">MerchantesolutionsLevelThreeProcessingCustomerStrategyRequest</item>
-                <item name="address" xsi:type="string">Magento\Merchantesolutions\Gateway\Request\LevelThree\AddressDataBuilder</item>
+                <item name="payment" xsi:type="string">MerchanteLevelThreeProcessingPaymentStrategyRequest</item>
+                <item name="items" xsi:type="string">MerchanteLevelThreeProcessingItemsStrategyRequest</item>
+                <item name="customer" xsi:type="string">MerchanteLevelThreeProcessingCustomerStrategyRequest</item>
+                <item name="address" xsi:type="string">Merchante\Merchante\Gateway\Request\LevelThree\AddressDataBuilder</item>
             </argument>
         </arguments>
     </virtualType>
     <!-- END Level 3 Processing Request -->
 
     <!-- Level 3 Processing Payment Strategy Request -->
-    <virtualType name="MerchantesolutionsLevelThreeProcessingPaymentStrategyRequest" type="Magento\Merchantesolutions\Gateway\Request\LevelThree\DataBuilderStrategy">
+    <virtualType name="MerchanteLevelThreeProcessingPaymentStrategyRequest" type="Merchante\Merchante\Gateway\Request\LevelThree\DataBuilderStrategy">
         <arguments>
             <argument name="builders" xsi:type="array">
-                <item name="VI" xsi:type="string">Magento\Merchantesolutions\Gateway\Request\LevelThree\VisaPaymentDataBuilder</item>
-                <item name="MC" xsi:type="string">Magento\Merchantesolutions\Gateway\Request\LevelThree\MastercardPaymentDataBuilder</item>
+                <item name="VI" xsi:type="string">Merchante\Merchante\Gateway\Request\LevelThree\VisaPaymentDataBuilder</item>
+                <item name="MC" xsi:type="string">Merchante\Merchante\Gateway\Request\LevelThree\MastercardPaymentDataBuilder</item>
             </argument>
         </arguments>
     </virtualType>
     <!-- END Level 3 Processing Payment Strategy Request -->
 
     <!-- Level 3 Processing Items Strategy Request -->
-    <virtualType name="MerchantesolutionsLevelThreeProcessingItemsStrategyRequest" type="Magento\Merchantesolutions\Gateway\Request\LevelThree\DataBuilderStrategy">
+    <virtualType name="MerchanteLevelThreeProcessingItemsStrategyRequest" type="Merchante\Merchante\Gateway\Request\LevelThree\DataBuilderStrategy">
         <arguments>
             <argument name="builders" xsi:type="array">
-                <item name="VI" xsi:type="string">Magento\Merchantesolutions\Gateway\Request\LevelThree\VisaItemsDataBuilder</item>
-                <item name="MC" xsi:type="string">Magento\Merchantesolutions\Gateway\Request\LevelThree\MastercardItemsPaymentDataBuilder</item>
-                <item name="AE" xsi:type="string">Magento\Merchantesolutions\Gateway\Request\LevelThree\AmexItemsPaymentDataBuilder</item>
+                <item name="VI" xsi:type="string">Merchante\Merchante\Gateway\Request\LevelThree\VisaItemsDataBuilder</item>
+                <item name="MC" xsi:type="string">Merchante\Merchante\Gateway\Request\LevelThree\MastercardItemsPaymentDataBuilder</item>
+                <item name="AE" xsi:type="string">Merchante\Merchante\Gateway\Request\LevelThree\AmexItemsPaymentDataBuilder</item>
             </argument>
         </arguments>
     </virtualType>
     <!-- END Level 3 Processing Items Strategy Request -->
 
     <!-- Level 3 Processing Customer Strategy Request -->
-    <virtualType name="MerchantesolutionsLevelThreeProcessingCustomerStrategyRequest" type="Magento\Merchantesolutions\Gateway\Request\LevelThree\DataBuilderStrategy">
+    <virtualType name="MerchanteLevelThreeProcessingCustomerStrategyRequest" type="Merchante\Merchante\Gateway\Request\LevelThree\DataBuilderStrategy">
         <arguments>
             <argument name="builders" xsi:type="array">
-                <item name="VI" xsi:type="string">Magento\Merchantesolutions\Gateway\Request\LevelThree\VisaCustomerDataBuilder</item>
-                <item name="AE" xsi:type="string">Magento\Merchantesolutions\Gateway\Request\LevelThree\AmexCustomerDataBuilder</item>
+                <item name="VI" xsi:type="string">Merchante\Merchante\Gateway\Request\LevelThree\VisaCustomerDataBuilder</item>
+                <item name="AE" xsi:type="string">Merchante\Merchante\Gateway\Request\LevelThree\AmexCustomerDataBuilder</item>
             </argument>
         </arguments>
     </virtualType>
     <!-- END Level 3 Processing Customer Strategy Request -->
 
     <!-- Authorize Command  -->
-    <virtualType name="MerchantesolutionsAuthorizeCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
+    <virtualType name="MerchanteAuthorizeCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
         <arguments>
-            <argument name="requestBuilder" xsi:type="object">MerchantesolutionsAuthorizeRequest</argument>
-            <argument name="transferFactory" xsi:type="object">Magento\Merchantesolutions\Gateway\Http\TransferFactory</argument>
-            <argument name="client" xsi:type="object">Magento\Merchantesolutions\Gateway\Http\Client\Transaction</argument>
-            <argument name="handler" xsi:type="object">MerchantesolutionsAuthorizationHandler</argument>
-            <argument name="validator" xsi:type="object">Magento\Merchantesolutions\Gateway\Validator\ResponseValidator</argument>
-            <argument name="errorMessageMapper" xsi:type="object">Magento\Merchantesolutions\Gateway\ErrorMapper\VirtualErrorMessageMapper</argument>
+            <argument name="requestBuilder" xsi:type="object">MerchanteAuthorizeRequest</argument>
+            <argument name="transferFactory" xsi:type="object">Merchante\Merchante\Gateway\Http\TransferFactory</argument>
+            <argument name="client" xsi:type="object">Merchante\Merchante\Gateway\Http\Client\Transaction</argument>
+            <argument name="handler" xsi:type="object">MerchanteAuthorizationHandler</argument>
+            <argument name="validator" xsi:type="object">Merchante\Merchante\Gateway\Validator\ResponseValidator</argument>
+            <argument name="errorMessageMapper" xsi:type="object">Merchante\Merchante\Gateway\ErrorMapper\VirtualErrorMessageMapper</argument>
         </arguments>
     </virtualType>
 
-    <virtualType name="MerchantesolutionsVaultAuthorizeCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
+    <virtualType name="MerchanteVaultAuthorizeCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
         <arguments>
-            <argument name="requestBuilder" xsi:type="object">MerchantesolutionsVaultAuthorizeRequest</argument>
-            <argument name="transferFactory" xsi:type="object">Magento\Merchantesolutions\Gateway\Http\TransferFactory</argument>
-            <argument name="client" xsi:type="object">Magento\Merchantesolutions\Gateway\Http\Client\Transaction</argument>
-            <argument name="handler" xsi:type="object">MerchantesolutionsAuthorizationHandler</argument>
-            <argument name="validator" xsi:type="object">Magento\Merchantesolutions\Gateway\Validator\ResponseValidator</argument>
-            <argument name="errorMessageMapper" xsi:type="object">Magento\Merchantesolutions\Gateway\ErrorMapper\VirtualErrorMessageMapper</argument>
+            <argument name="requestBuilder" xsi:type="object">MerchanteVaultAuthorizeRequest</argument>
+            <argument name="transferFactory" xsi:type="object">Merchante\Merchante\Gateway\Http\TransferFactory</argument>
+            <argument name="client" xsi:type="object">Merchante\Merchante\Gateway\Http\Client\Transaction</argument>
+            <argument name="handler" xsi:type="object">MerchanteAuthorizationHandler</argument>
+            <argument name="validator" xsi:type="object">Merchante\Merchante\Gateway\Validator\ResponseValidator</argument>
+            <argument name="errorMessageMapper" xsi:type="object">Merchante\Merchante\Gateway\ErrorMapper\VirtualErrorMessageMapper</argument>
         </arguments>
     </virtualType>
 
-    <virtualType name="MerchantesolutionsHostedCheckoutAuthorizeCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
+    <virtualType name="MerchanteHostedCheckoutAuthorizeCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
         <arguments>
-            <argument name="requestBuilder" xsi:type="object">MerchantesolutionsHostedCheckoutAuthorizeRequest</argument>
-            <argument name="transferFactory" xsi:type="object">Magento\Merchantesolutions\Gateway\Http\TransferFactory</argument>
-            <argument name="client" xsi:type="object">Magento\Merchantesolutions\Gateway\Http\Client\HostedCheckoutTransaction</argument>
-            <argument name="handler" xsi:type="object">MerchantesolutionsAuthorizationHandler</argument>
-            <argument name="validator" xsi:type="object">Magento\Merchantesolutions\Gateway\Validator\ResponseValidator</argument>
-            <argument name="errorMessageMapper" xsi:type="object">Magento\Merchantesolutions\Gateway\ErrorMapper\VirtualErrorMessageMapper</argument>
+            <argument name="requestBuilder" xsi:type="object">MerchanteHostedCheckoutAuthorizeRequest</argument>
+            <argument name="transferFactory" xsi:type="object">Merchante\Merchante\Gateway\Http\TransferFactory</argument>
+            <argument name="client" xsi:type="object">Merchante\Merchante\Gateway\Http\Client\HostedCheckoutTransaction</argument>
+            <argument name="handler" xsi:type="object">MerchanteAuthorizationHandler</argument>
+            <argument name="validator" xsi:type="object">Merchante\Merchante\Gateway\Validator\ResponseValidator</argument>
+            <argument name="errorMessageMapper" xsi:type="object">Merchante\Merchante\Gateway\ErrorMapper\VirtualErrorMessageMapper</argument>
         </arguments>
     </virtualType>
     <!-- END Authorize Command  -->
 
     <!-- Sale Command  -->
-    <virtualType name="MerchantesolutionsSaleCommand" type="MerchantesolutionsAuthorizeCommand">
+    <virtualType name="MerchanteSaleCommand" type="MerchanteAuthorizeCommand">
         <arguments>
-            <argument name="requestBuilder" xsi:type="object">MerchantesolutionsSaleRequest</argument>
+            <argument name="requestBuilder" xsi:type="object">MerchanteSaleRequest</argument>
         </arguments>
     </virtualType>
 
-    <virtualType name="MerchantesolutionsVaultSaleCommand" type="MerchantesolutionsVaultAuthorizeCommand">
+    <virtualType name="MerchanteVaultSaleCommand" type="MerchanteVaultAuthorizeCommand">
         <arguments>
-            <argument name="requestBuilder" xsi:type="object">MerchantesolutionsVaultSaleRequest</argument>
+            <argument name="requestBuilder" xsi:type="object">MerchanteVaultSaleRequest</argument>
         </arguments>
     </virtualType>
 
-    <virtualType name="MerchantesolutionsHostedCheckoutSaleCommand" type="MerchantesolutionsHostedCheckoutAuthorizeCommand">
+    <virtualType name="MerchanteHostedCheckoutSaleCommand" type="MerchanteHostedCheckoutAuthorizeCommand">
         <arguments>
-            <argument name="requestBuilder" xsi:type="object">MerchantesolutionsHostedCheckoutSaleRequest</argument>
-            <argument name="client" xsi:type="object">Magento\Merchantesolutions\Gateway\Http\Client\HostedCheckoutTransaction</argument>
+            <argument name="requestBuilder" xsi:type="object">MerchanteHostedCheckoutSaleRequest</argument>
+            <argument name="client" xsi:type="object">Merchante\Merchante\Gateway\Http\Client\HostedCheckoutTransaction</argument>
         </arguments>
     </virtualType>
     <!-- END Sale Command  -->
 
     <!-- Capture Command  -->
-    <virtualType name="MerchantesolutionsCaptureCommand" type="MerchantesolutionsAuthorizeCommand">
+    <virtualType name="MerchanteCaptureCommand" type="MerchanteAuthorizeCommand">
         <arguments>
-            <argument name="requestBuilder" xsi:type="object">MerchantesolutionsCaptureRequest</argument>
-            <argument name="handler" xsi:type="object">MerchantesolutionsCaptureHandler</argument>
+            <argument name="requestBuilder" xsi:type="object">MerchanteCaptureRequest</argument>
+            <argument name="handler" xsi:type="object">MerchanteCaptureHandler</argument>
         </arguments>
     </virtualType>
 
-    <virtualType name="MerchantesolutionsHostCheckoutCaptureCommand" type="MerchantesolutionsHostedCheckoutAuthorizeCommand">
+    <virtualType name="MerchanteHostCheckoutCaptureCommand" type="MerchanteHostedCheckoutAuthorizeCommand">
         <arguments>
-            <argument name="requestBuilder" xsi:type="object">MerchantesolutionsHostedCheckoutCaptureRequest</argument>
-            <argument name="client" xsi:type="object">Magento\Merchantesolutions\Gateway\Http\Client\Transaction</argument>
-            <argument name="handler" xsi:type="object">MerchantesolutionsCaptureHandler</argument>
+            <argument name="requestBuilder" xsi:type="object">MerchanteHostedCheckoutCaptureRequest</argument>
+            <argument name="client" xsi:type="object">Merchante\Merchante\Gateway\Http\Client\Transaction</argument>
+            <argument name="handler" xsi:type="object">MerchanteCaptureHandler</argument>
         </arguments>
     </virtualType>
     <!-- END Capture Command  -->
 
     <!-- Capture Strategy Command  -->
-    <virtualType name="MerchantesolutionsCaptureStrategyCommand" type="Magento\Merchantesolutions\Gateway\Command\CaptureStrategyCommand">
+    <virtualType name="MerchanteCaptureStrategyCommand" type="Merchante\Merchante\Gateway\Command\CaptureStrategyCommand">
         <arguments>
-            <argument name="commandPool" xsi:type="object">MerchantesolutionsCommandPool</argument>
+            <argument name="commandPool" xsi:type="object">MerchanteCommandPool</argument>
         </arguments>
     </virtualType>
 
-    <virtualType name="MerchantesolutionsHostedCheckoutCaptureStrategyCommand" type="Magento\Merchantesolutions\Gateway\Command\CaptureStrategyCommand">
+    <virtualType name="MerchanteHostedCheckoutCaptureStrategyCommand" type="Merchante\Merchante\Gateway\Command\CaptureStrategyCommand">
         <arguments>
-            <argument name="commandPool" xsi:type="object">MerchantesolutionsHostedCheckoutCommandPool</argument>
+            <argument name="commandPool" xsi:type="object">MerchanteHostedCheckoutCommandPool</argument>
         </arguments>
     </virtualType>
     <!-- END Capture Strategy Command -->
 
     <!-- Void Command -->
-    <virtualType name="MerchantesolutionsVoidCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
+    <virtualType name="MerchanteVoidCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
         <arguments>
-            <argument name="requestBuilder" xsi:type="object">MerchantesolutionsVoidRequest</argument>
-            <argument name="transferFactory" xsi:type="object">Magento\Merchantesolutions\Gateway\Http\TransferFactory</argument>
-            <argument name="client" xsi:type="object">Magento\Merchantesolutions\Gateway\Http\Client\Transaction</argument>
-            <argument name="handler" xsi:type="object">Magento\Merchantesolutions\Gateway\Response\VoidHandler</argument>
-            <argument name="validator" xsi:type="object">Magento\Merchantesolutions\Gateway\Validator\ResponseValidator</argument>
-            <argument name="errorMessageMapper" xsi:type="object">Magento\Merchantesolutions\Gateway\ErrorMapper\VirtualErrorMessageMapper</argument>
+            <argument name="requestBuilder" xsi:type="object">MerchanteVoidRequest</argument>
+            <argument name="transferFactory" xsi:type="object">Merchante\Merchante\Gateway\Http\TransferFactory</argument>
+            <argument name="client" xsi:type="object">Merchante\Merchante\Gateway\Http\Client\Transaction</argument>
+            <argument name="handler" xsi:type="object">Merchante\Merchante\Gateway\Response\VoidHandler</argument>
+            <argument name="validator" xsi:type="object">Merchante\Merchante\Gateway\Validator\ResponseValidator</argument>
+            <argument name="errorMessageMapper" xsi:type="object">Merchante\Merchante\Gateway\ErrorMapper\VirtualErrorMessageMapper</argument>
         </arguments>
     </virtualType>
     <!-- END Void Command -->
 
     <!-- Cancel Command -->
-    <virtualType name="Magento\Merchantesolutions\Gateway\CancelCommand" type="MerchantesolutionsVoidCommand">
+    <virtualType name="Merchante\Merchante\Gateway\CancelCommand" type="MerchanteVoidCommand">
         <arguments>
-            <argument name="handler" xsi:type="object">Magento\Merchantesolutions\Gateway\Response\VoidHandler</argument>
-            <argument name="validator" xsi:type="object">Magento\Merchantesolutions\Gateway\Validator\ResponseValidator</argument>
+            <argument name="handler" xsi:type="object">Merchante\Merchante\Gateway\Response\VoidHandler</argument>
+            <argument name="validator" xsi:type="object">Merchante\Merchante\Gateway\Validator\ResponseValidator</argument>
         </arguments>
     </virtualType>
     <!-- END Cancel Command -->
 
     <!-- Refund Command -->
-    <virtualType name="MerchantesolutionsRefundCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
+    <virtualType name="MerchanteRefundCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
         <arguments>
-            <argument name="requestBuilder" xsi:type="object">MerchantesolutionsRefundRequest</argument>
-            <argument name="transferFactory" xsi:type="object">Magento\Merchantesolutions\Gateway\Http\TransferFactory</argument>
-            <argument name="client" xsi:type="object">Magento\Merchantesolutions\Gateway\Http\Client\Transaction</argument>
-            <argument name="handler" xsi:type="object">Magento\Merchantesolutions\Gateway\Response\RefundHandler</argument>
-            <argument name="validator" xsi:type="object">Magento\Merchantesolutions\Gateway\Validator\ResponseValidator</argument>
-            <argument name="errorMessageMapper" xsi:type="object">Magento\Merchantesolutions\Gateway\ErrorMapper\VirtualErrorMessageMapper</argument>
+            <argument name="requestBuilder" xsi:type="object">MerchanteRefundRequest</argument>
+            <argument name="transferFactory" xsi:type="object">Merchante\Merchante\Gateway\Http\TransferFactory</argument>
+            <argument name="client" xsi:type="object">Merchante\Merchante\Gateway\Http\Client\Transaction</argument>
+            <argument name="handler" xsi:type="object">Merchante\Merchante\Gateway\Response\RefundHandler</argument>
+            <argument name="validator" xsi:type="object">Merchante\Merchante\Gateway\Validator\ResponseValidator</argument>
+            <argument name="errorMessageMapper" xsi:type="object">Merchante\Merchante\Gateway\ErrorMapper\VirtualErrorMessageMapper</argument>
         </arguments>
     </virtualType>
     <!-- END Refund Command -->
 
     <!-- Value handlers infrastructure -->
-    <virtualType name="MerchantesolutionsValueHandlerPool" type="Magento\Payment\Gateway\Config\ValueHandlerPool">
+    <virtualType name="MerchanteValueHandlerPool" type="Magento\Payment\Gateway\Config\ValueHandlerPool">
         <arguments>
             <argument name="handlers" xsi:type="array">
-                <item name="default" xsi:type="string">MerchantesolutionsConfigValueHandler</item>
-                <item name="can_void" xsi:type="string">Magento\Merchantesolutions\Gateway\Config\CanVoidHandler</item>
-                <item name="can_cancel" xsi:type="string">Magento\Merchantesolutions\Gateway\Config\CanVoidHandler</item>
+                <item name="default" xsi:type="string">MerchanteConfigValueHandler</item>
+                <item name="can_void" xsi:type="string">Merchante\Merchante\Gateway\Config\CanVoidHandler</item>
+                <item name="can_cancel" xsi:type="string">Merchante\Merchante\Gateway\Config\CanVoidHandler</item>
             </argument>
         </arguments>
     </virtualType>
-    <virtualType name="MerchantesolutionsHostedCheckoutValueHandlerPool" type="Magento\Payment\Gateway\Config\ValueHandlerPool">
+    <virtualType name="MerchanteHostedCheckoutValueHandlerPool" type="Magento\Payment\Gateway\Config\ValueHandlerPool">
         <arguments>
             <argument name="handlers" xsi:type="array">
-                <item name="default" xsi:type="string">MerchantesolutionsHostedCheckoutConfigValueHandler</item>
-                <item name="can_void" xsi:type="string">Magento\Merchantesolutions\Gateway\Config\CanVoidHandler</item>
-                <item name="can_cancel" xsi:type="string">Magento\Merchantesolutions\Gateway\Config\CanVoidHandler</item>
+                <item name="default" xsi:type="string">MerchanteHostedCheckoutConfigValueHandler</item>
+                <item name="can_void" xsi:type="string">Merchante\Merchante\Gateway\Config\CanVoidHandler</item>
+                <item name="can_cancel" xsi:type="string">Merchante\Merchante\Gateway\Config\CanVoidHandler</item>
             </argument>
         </arguments>
     </virtualType>
-    <virtualType name="MerchantesolutionsConfigValueHandler" type="Magento\Payment\Gateway\Config\ConfigValueHandler">
+    <virtualType name="MerchanteConfigValueHandler" type="Magento\Payment\Gateway\Config\ConfigValueHandler">
         <arguments>
-            <argument name="configInterface" xsi:type="object">Magento\Merchantesolutions\Gateway\Config\Config</argument>
+            <argument name="configInterface" xsi:type="object">Merchante\Merchante\Gateway\Config\Config</argument>
         </arguments>
     </virtualType>
-    <virtualType name="MerchantesolutionsHostedCheckoutConfigValueHandler" type="Magento\Payment\Gateway\Config\ConfigValueHandler">
+    <virtualType name="MerchanteHostedCheckoutConfigValueHandler" type="Magento\Payment\Gateway\Config\ConfigValueHandler">
         <arguments>
-            <argument name="configInterface" xsi:type="object">Magento\Merchantesolutions\Gateway\Config\HostedCheckout\Config</argument>
+            <argument name="configInterface" xsi:type="object">Merchante\Merchante\Gateway\Config\HostedCheckout\Config</argument>
         </arguments>
     </virtualType>
-    <virtualType name="MerchantesolutionsAuthorizationHandler" type="Magento\Payment\Gateway\Response\HandlerChain">
+    <virtualType name="MerchanteAuthorizationHandler" type="Magento\Payment\Gateway\Response\HandlerChain">
         <arguments>
             <argument name="handlers" xsi:type="array">
-                <item name="auth_details" xsi:type="string">Magento\Merchantesolutions\Gateway\Response\AuthDetailsHandler</item>
-                <item name="txn_id" xsi:type="string">Magento\Merchantesolutions\Gateway\Response\TransactionIdHandler</item>
-                <item name="risk_data" xsi:type="string">Magento\Merchantesolutions\Gateway\Response\RiskDataHandler</item>
-                <item name="vault_details" xsi:type="string">Magento\Merchantesolutions\Gateway\Response\VaultDetailsHandler</item>
+                <item name="auth_details" xsi:type="string">Merchante\Merchante\Gateway\Response\AuthDetailsHandler</item>
+                <item name="txn_id" xsi:type="string">Merchante\Merchante\Gateway\Response\TransactionIdHandler</item>
+                <item name="risk_data" xsi:type="string">Merchante\Merchante\Gateway\Response\RiskDataHandler</item>
+                <item name="vault_details" xsi:type="string">Merchante\Merchante\Gateway\Response\VaultDetailsHandler</item>
             </argument>
         </arguments>
     </virtualType>
-    <virtualType name="MerchantesolutionsVaultAuthorizationHandler" type="Magento\Payment\Gateway\Response\HandlerChain">
+    <virtualType name="MerchanteVaultAuthorizationHandler" type="Magento\Payment\Gateway\Response\HandlerChain">
         <arguments>
             <argument name="handlers" xsi:type="array">
-                <item name="auth_details" xsi:type="string">Magento\Merchantesolutions\Gateway\Response\AuthDetailsHandler</item>
-                <item name="txn_id" xsi:type="string">Magento\Merchantesolutions\Gateway\Response\TransactionIdHandler</item>
-                <item name="risk_data" xsi:type="string">Magento\Merchantesolutions\Gateway\Response\RiskDataHandler</item>
+                <item name="auth_details" xsi:type="string">Merchante\Merchante\Gateway\Response\AuthDetailsHandler</item>
+                <item name="txn_id" xsi:type="string">Merchante\Merchante\Gateway\Response\TransactionIdHandler</item>
+                <item name="risk_data" xsi:type="string">Merchante\Merchante\Gateway\Response\RiskDataHandler</item>
             </argument>
         </arguments>
     </virtualType>
-    <virtualType name="MerchantesolutionsCaptureHandler" type="Magento\Payment\Gateway\Response\HandlerChain">
+    <virtualType name="MerchanteCaptureHandler" type="Magento\Payment\Gateway\Response\HandlerChain">
         <arguments>
             <argument name="handlers" xsi:type="array">
-                <item name="settlement_details" xsi:type="string">Magento\Merchantesolutions\Gateway\Response\SettleDetailsHandler</item>
-                <item name="txn_id" xsi:type="string">Magento\Merchantesolutions\Gateway\Response\TransactionIdHandler</item>
-                <item name="risk_data" xsi:type="string">Magento\Merchantesolutions\Gateway\Response\RiskDataHandler</item>
+                <item name="settlement_details" xsi:type="string">Merchante\Merchante\Gateway\Response\SettleDetailsHandler</item>
+                <item name="txn_id" xsi:type="string">Merchante\Merchante\Gateway\Response\TransactionIdHandler</item>
+                <item name="risk_data" xsi:type="string">Merchante\Merchante\Gateway\Response\RiskDataHandler</item>
             </argument>
         </arguments>
     </virtualType>
     <!-- END Value handlers infrastructure -->
 
-    <!-- Merchantesolutions validators infrastructure -->
-    <virtualType name="MerchantesolutionsCountryValidator" type="Magento\Payment\Gateway\Validator\CountryValidator">
+    <!-- Merchante validators infrastructure -->
+    <virtualType name="MerchanteCountryValidator" type="Magento\Payment\Gateway\Validator\CountryValidator">
         <arguments>
-            <argument name="config" xsi:type="object">Magento\Merchantesolutions\Gateway\Config\Config</argument>
+            <argument name="config" xsi:type="object">Merchante\Merchante\Gateway\Config\Config</argument>
         </arguments>
     </virtualType>
-    <virtualType name="MerchantesolutionsValidatorPool" type="Magento\Payment\Gateway\Validator\ValidatorPool">
+    <virtualType name="MerchanteValidatorPool" type="Magento\Payment\Gateway\Validator\ValidatorPool">
         <arguments>
             <argument name="validators" xsi:type="array">
-                <item name="country" xsi:type="string">MerchantesolutionsCountryValidator</item>
+                <item name="country" xsi:type="string">MerchanteCountryValidator</item>
             </argument>
         </arguments>
     </virtualType>
-    <!-- END Merchantesolutions validators infrastructure -->
+    <!-- END Merchante validators infrastructure -->
 
-    <type name="Magento\Merchantesolutions\Block\Info">
+    <type name="Merchante\Merchante\Block\Info">
         <arguments>
-            <argument name="config" xsi:type="object">Magento\Merchantesolutions\Gateway\Config\Config</argument>
+            <argument name="config" xsi:type="object">Merchante\Merchante\Gateway\Config\Config</argument>
         </arguments>
     </type>
 
-    <virtualType name="Magento\Merchantesolutions\Block\HostedCheckout\Info" type="Magento\Merchantesolutions\Block\Info">
+    <virtualType name="Merchante\Merchante\Block\HostedCheckout\Info" type="Merchante\Merchante\Block\Info">
         <arguments>
-            <argument name="config" xsi:type="object">Magento\Merchantesolutions\Gateway\Config\HostedCheckout\Config</argument>
+            <argument name="config" xsi:type="object">Merchante\Merchante\Gateway\Config\HostedCheckout\Config</argument>
         </arguments>
     </virtualType>
 
     <type name="Magento\Config\Model\Config\TypePool">
         <arguments>
             <argument name="sensitive" xsi:type="array">
-                <item name="payment/merchantesolutions/profile_key" xsi:type="string">1</item>
-                <item name="payment/merchantesolutions/profile_id" xsi:type="string">1</item>
+                <item name="payment/merchante/profile_key" xsi:type="string">1</item>
+                <item name="payment/merchante/profile_id" xsi:type="string">1</item>
             </argument>
         </arguments>
     </type>
 
     <!-- Plugins for order payment state -->
     <type name="Magento\Sales\Model\Order\Payment\State\AuthorizeCommand">
-        <plugin name="authorize_transaction_message" type="Magento\Merchantesolutions\Plugin\AuthorizationTransactionMessage"/>
+        <plugin name="authorize_transaction_message" type="Merchante\Merchante\Plugin\AuthorizationTransactionMessage"/>
     </type>
 
     <type name="Magento\Sales\Model\Order\Payment\State\CaptureCommand">
-        <plugin name="capture_transaction_message" type="Magento\Merchantesolutions\Plugin\CaptureTransactionMessage"/>
+        <plugin name="capture_transaction_message" type="Merchante\Merchante\Plugin\CaptureTransactionMessage"/>
     </type>
 
     <type name="Magento\Sales\Model\Order\Payment">
-        <plugin name="closed_transaction_message" type="Magento\Merchantesolutions\Plugin\ClosedTransactionMessage"/>
+        <plugin name="closed_transaction_message" type="Merchante\Merchante\Plugin\ClosedTransactionMessage"/>
     </type>
 
     <!-- Collections Processors -->
-    <virtualType name="Magento\Merchantesolutions\Model\Api\SearchCriteria\TransactionCollectionProcessor" type="Magento\Framework\Api\SearchCriteria\CollectionProcessor">
+    <virtualType name="Merchante\Merchante\Model\Api\SearchCriteria\TransactionCollectionProcessor" type="Magento\Framework\Api\SearchCriteria\CollectionProcessor">
         <arguments>
             <argument name="processors" xsi:type="array">
                 <item name="filters" xsi:type="object">Magento\Framework\Api\SearchCriteria\CollectionProcessor\FilterProcessor</item>
@@ -560,9 +560,9 @@
             </argument>
         </arguments>
     </virtualType>
-    <type name="Magento\Merchantesolutions\Model\TransactionRepository">
+    <type name="Merchante\Merchante\Model\TransactionRepository">
         <arguments>
-            <argument name="collectionProcessor" xsi:type="object">Magento\Merchantesolutions\Model\Api\SearchCriteria\TransactionCollectionProcessor</argument>
+            <argument name="collectionProcessor" xsi:type="object">Merchante\Merchante\Model\Api\SearchCriteria\TransactionCollectionProcessor</argument>
         </arguments>
     </type>
 </config>

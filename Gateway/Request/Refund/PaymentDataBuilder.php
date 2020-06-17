@@ -4,18 +4,18 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Gateway\Request\Refund;
+namespace Merchante\Merchante\Gateway\Request\Refund;
 
-use Magento\Merchantesolutions\Gateway\Config\Config;
-use Magento\Merchantesolutions\Gateway\Http\Data\Request;
-use Magento\Merchantesolutions\Gateway\SubjectReader;
+use Merchante\Merchante\Gateway\Config\Config;
+use Merchante\Merchante\Gateway\Http\Data\Request;
+use Merchante\Merchante\Gateway\SubjectReader;
 use Magento\Payment\Gateway\Request\BuilderInterface;
 use Magento\Payment\Helper\Formatter;
 
 
 /**
  * Class PaymentDataBuilder
- * @package Magento\Merchantesolutions\Gateway\Request
+ * @package Merchante\Merchante\Gateway\Request
  */
 class PaymentDataBuilder implements BuilderInterface
 {

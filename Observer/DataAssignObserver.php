@@ -4,20 +4,20 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Observer;
+namespace Merchante\Merchante\Observer;
 
 use Magento\Framework\Api\SearchCriteriaBuilder;
 use Magento\Framework\Event\Observer;
-use Magento\Merchantesolutions\Api\TransactionRepositoryInterface;
-use Magento\Merchantesolutions\Gateway\Http\Data\Response;
-use Magento\Merchantesolutions\Model\Transaction;
+use Merchante\Merchante\Api\TransactionRepositoryInterface;
+use Merchante\Merchante\Gateway\Http\Data\Response;
+use Merchante\Merchante\Model\Transaction;
 use Magento\Payment\Observer\AbstractDataAssignObserver;
 use Magento\Quote\Api\Data\PaymentInterface;
 use Psr\Log\LoggerInterface;
 
 /**
  * Class DataAssignObserver
- * @package Magento\Merchantesolutions\Observer
+ * @package Merchante\Merchante\Observer
  */
 class DataAssignObserver extends AbstractDataAssignObserver
 {

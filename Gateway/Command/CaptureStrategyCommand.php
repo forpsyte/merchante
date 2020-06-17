@@ -4,11 +4,11 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Gateway\Command;
+namespace Merchante\Merchante\Gateway\Command;
 
 use Magento\Framework\Api\FilterBuilder;
 use Magento\Framework\Api\SearchCriteriaBuilder;
-use Magento\Merchantesolutions\Gateway\SubjectReader;
+use Merchante\Merchante\Gateway\SubjectReader;
 use Magento\Payment\Gateway\Command\CommandPoolInterface;
 use Magento\Payment\Gateway\CommandInterface;
 use Magento\Payment\Gateway\Data\PaymentDataObjectInterface;
@@ -19,17 +19,17 @@ use Magento\Sales\Api\TransactionRepositoryInterface;
 
 /**
  * Class CaptureStrategyCommand
- * @package Magento\Merchantesolutions\Gateway\Command
+ * @package Merchante\Merchante\Gateway\Command
  */
 class CaptureStrategyCommand implements CommandInterface
 {
     /**
-     * Merchant e-Solutions authorize and capture command
+     * MerchantE authorize and capture command
      */
     const SALE = 'sale';
 
     /**
-     * Merchant e-Solutions capture command
+     * MerchantE capture command
      */
     const CAPTURE = 'settlement';
 

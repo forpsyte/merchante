@@ -3,10 +3,10 @@
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace Magento\Merchantesolutions\Gateway\Request;
+namespace Merchante\Merchante\Gateway\Request;
 
-use Magento\Merchantesolutions\Gateway\Config\Config;
-use Magento\Merchantesolutions\Gateway\SubjectReader;
+use Merchante\Merchante\Gateway\Config\Config;
+use Merchante\Merchante\Gateway\SubjectReader;
 use Magento\Payment\Gateway\Request\BuilderInterface;
 use Magento\Sales\Model\Order\Payment;
 

@@ -4,7 +4,7 @@
  */
 
 define([
-    'Magento_Merchantesolutions/js/model/tokenize'
+    'Merchante_Merchante/js/model/tokenize'
 ], function (tokenizationService) {
     'use strict';
 
@@ -35,7 +35,7 @@ define([
     }
 
     return function(ccNumber, ccExpMonth, ccExpYear){
-        let serviceUrl, payload, method = 'merchantesolutions';
+        let serviceUrl, payload, method = 'merchante';
 
         payload = {
             transaction_type: 'T',

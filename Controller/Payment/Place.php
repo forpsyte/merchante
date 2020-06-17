@@ -4,24 +4,25 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Controller\Payment;
+namespace Merchante\Merchante\Controller\Payment;
 
 use Magento\Checkout\Model\Session;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\App\CsrfAwareActionInterface;
 use Magento\Framework\App\Request\InvalidRequestException;
 use Magento\Framework\App\RequestInterface;
+use Magento\Framework\Controller\Result\Json;
 use Magento\Framework\Controller\Result\JsonFactory;
 use Magento\Framework\Phrase;
-use Magento\Merchantesolutions\Controller\HostedCheckout\AbstractAction;
-use Magento\Merchantesolutions\Gateway\Config\HostedCheckout\Config;
-use Magento\Merchantesolutions\Model\Transaction;
-use Magento\Merchantesolutions\Model\TransactionFactory;
-use Magento\Merchantesolutions\Model\TransactionRepository;
+use Merchante\Merchante\Controller\HostedCheckout\AbstractAction;
+use Merchante\Merchante\Gateway\Config\HostedCheckout\Config;
+use Merchante\Merchante\Model\Transaction;
+use Merchante\Merchante\Model\TransactionFactory;
+use Merchante\Merchante\Model\TransactionRepository;
 
 /**
  * Class Place
- * @package Magento\Merchantesolutions\Controller\Payment
+ * @package Merchante\Merchante\Controller\Payment
  */
 class Place extends AbstractAction implements CsrfAwareActionInterface
 {
@@ -82,7 +83,7 @@ class Place extends AbstractAction implements CsrfAwareActionInterface
     {
         $params = $this->translateParamFields($this->getRequest()->getParams());
 
-        /** @var  \Magento\Merchantesolutions\Model\Transaction $transaction */
+        /** @var  Transaction $transaction */
         $transaction = $this->transactionFactory->create();
 
         foreach ($params as $field => $value) {
@@ -126,7 +127,7 @@ class Place extends AbstractAction implements CsrfAwareActionInterface
 
     /**
      * @param array|string $data
-     * @return \Magento\Framework\Controller\Result\Json
+     * @return Json
      */
     private function createResponse($data)
     {

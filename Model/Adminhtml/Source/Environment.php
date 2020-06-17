@@ -4,13 +4,13 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Model\Adminhtml\Source;
+namespace Merchante\Merchante\Model\Adminhtml\Source;
 
 use Magento\Framework\Data\OptionSourceInterface;
 
 /**
  * Class Environment
- * @package Magento\Merchantesolutions\Model\Adminhtml\Source
+ * @package Merchante\Merchante\Model\Adminhtml\Source
  */
 class Environment implements OptionSourceInterface
 {

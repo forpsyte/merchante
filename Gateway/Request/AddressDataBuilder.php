@@ -4,15 +4,15 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Gateway\Request;
+namespace Merchante\Merchante\Gateway\Request;
 
-use Magento\Merchantesolutions\Gateway\Http\Data\Request;
-use Magento\Merchantesolutions\Gateway\SubjectReader;
+use Merchante\Merchante\Gateway\Http\Data\Request;
+use Merchante\Merchante\Gateway\SubjectReader;
 use Magento\Payment\Gateway\Request\BuilderInterface;
 
 /**
  * Class AddressDataBuilder
- * @package Magento\Merchantesolutions\Gateway\Request
+ * @package Merchante\Merchante\Gateway\Request
  */
 class AddressDataBuilder implements BuilderInterface
 {

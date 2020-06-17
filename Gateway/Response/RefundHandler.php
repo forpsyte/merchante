@@ -4,14 +4,14 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Gateway\Response;
+namespace Merchante\Merchante\Gateway\Response;
 
-use Magento\Merchantesolutions\Gateway\Http\Data\Response;
+use Merchante\Merchante\Gateway\Http\Data\Response;
 use Magento\Sales\Model\Order\Payment;
 
 /**
  * Class RefundHandler
- * @package Magento\Merchantesolutions\Gateway\Response
+ * @package Merchante\Merchante\Gateway\Response
  */
 class RefundHandler extends VoidHandler
 {

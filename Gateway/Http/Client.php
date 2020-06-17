@@ -4,16 +4,16 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Gateway\Http;
+namespace Merchante\Merchante\Gateway\Http;
 
 use Magento\Framework\Exception\LocalizedException;
-use Magento\Merchantesolutions\Gateway\Config\Config;
-use Magento\Merchantesolutions\Gateway\Http\Data\Request;
-use Magento\Merchantesolutions\Gateway\Http\Data\Response;
+use Merchante\Merchante\Gateway\Config\Config;
+use Merchante\Merchante\Gateway\Http\Data\Request;
+use Merchante\Merchante\Gateway\Http\Data\Response;
 
 /**
  * Class Client
- * @package Magento\Merchantesolutions\Model\Adapter\Http
+ * @package Merchante\Merchante\Model\Adapter\Http
  */
 class Client
 {

@@ -4,17 +4,17 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Gateway\Response;
+namespace Merchante\Merchante\Gateway\Response;
 
-use Magento\Merchantesolutions\Gateway\Config\Config;
-use Magento\Merchantesolutions\Gateway\Http\Data\Response;
-use Magento\Merchantesolutions\Gateway\SubjectReader;
+use Merchante\Merchante\Gateway\Config\Config;
+use Merchante\Merchante\Gateway\Http\Data\Response;
+use Merchante\Merchante\Gateway\SubjectReader;
 use Magento\Payment\Gateway\Helper\ContextHelper;
 use Magento\Sales\Model\Order\Payment;
 
 /**
  * Class RiskDataHandler
- * @package Magento\Merchantesolutions\Gateway\Response
+ * @package Merchante\Merchante\Gateway\Response
  */
 class RiskDataHandler extends AbstractHandler
 {

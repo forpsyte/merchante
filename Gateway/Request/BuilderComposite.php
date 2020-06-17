@@ -4,16 +4,16 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Gateway\Request;
+namespace Merchante\Merchante\Gateway\Request;
 
 use Magento\Framework\ObjectManager\TMap;
 use Magento\Framework\ObjectManager\TMapFactory;
-use Magento\Merchantesolutions\Gateway\Config\Config;
+use Merchante\Merchante\Gateway\Config\Config;
 use Magento\Payment\Gateway\Request\BuilderInterface;
 
 /**
  * Class BuilderComposite
- * @package Magento\Merchantesolutions\Gateway\Request
+ * @package Merchante\Merchante\Gateway\Request
  */
 class BuilderComposite implements BuilderInterface
 {

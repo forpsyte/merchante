@@ -3,7 +3,7 @@
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace Magento\Merchantesolutions\Block;
+namespace Merchante\Merchante\Block;
 
 use Magento\Framework\Phrase;
 use Magento\Framework\View\Element\Template\Context;

@@ -4,11 +4,11 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Model;
+namespace Merchante\Merchante\Model;
 
 /**
  * Class TaxCodes
- * @package Magento\Merchantesolutions\Model
+ * @package Merchante\Merchante\Model
  */
 class TaxCodes
 {

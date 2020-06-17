@@ -4,7 +4,7 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Helper;
+namespace Merchante\Merchante\Helper;
 
 use Magento\Framework\Api\FilterBuilder;
 use Magento\Framework\Api\SearchCriteriaBuilder;
@@ -12,8 +12,8 @@ use Magento\Framework\App\Helper\AbstractHelper;
 use Magento\Framework\App\Helper\Context;
 use Magento\Framework\Exception\InputException;
 use Magento\Framework\Exception\NoSuchEntityException;
-use Magento\Merchantesolutions\Gateway\Config\Config;
-use Magento\Merchantesolutions\Model\TaxCodes;
+use Merchante\Merchante\Gateway\Config\Config;
+use Merchante\Merchante\Model\TaxCodes;
 use Magento\Payment\Model\InfoInterface;
 use Magento\Sales\Model\Order;
 use Magento\Tax\Api\Data\OrderTaxDetailsAppliedTaxInterface;
@@ -23,7 +23,7 @@ use Magento\Tax\Api\TaxRateRepositoryInterface;
 
 /**
  * Class Tax
- * @package Magento\Merchantesolutions\Helper
+ * @package Merchante\Merchante\Helper
  */
 class Tax extends AbstractHelper
 {

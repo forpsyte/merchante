@@ -4,21 +4,21 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Gateway\Request\LevelThree;
+namespace Merchante\Merchante\Gateway\Request\LevelThree;
 
 use Magento\Framework\Exception\InputException;
 use Magento\Framework\Exception\NoSuchEntityException;
-use Magento\Merchantesolutions\Gateway\Config\Config;
-use Magento\Merchantesolutions\Gateway\SubjectReader;
-use Magento\Merchantesolutions\Helper\Tax;
-use Magento\Merchantesolutions\Model\TaxCodes;
+use Merchante\Merchante\Gateway\Config\Config;
+use Merchante\Merchante\Gateway\SubjectReader;
+use Merchante\Merchante\Helper\Tax;
+use Merchante\Merchante\Model\TaxCodes;
 use Magento\Payment\Gateway\Request\BuilderInterface;
 use Magento\Sales\Model\Order;
 use Magento\Sales\Model\Order\Item;
 
 /**
  * Class VisaItemsDataBuilder
- * @package Magento\Merchantesolutions\Gateway\Request\LevelThree
+ * @package Merchante\Merchante\Gateway\Request\LevelThree
  */
 class VisaItemsDataBuilder implements BuilderInterface
 {

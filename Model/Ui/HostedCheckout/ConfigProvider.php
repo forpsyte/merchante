@@ -4,14 +4,14 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Model\Ui\HostedCheckout;
+namespace Merchante\Merchante\Model\Ui\HostedCheckout;
 
 use Magento\Checkout\Model\ConfigProviderInterface;
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Session\SessionManagerInterface;
-use Magento\Merchantesolutions\Gateway\Config\Config;
-use Magento\Merchantesolutions\Gateway\Config\HostedCheckout\Config as HcConfig;
-use Magento\Merchantesolutions\Model\Ui\ConfigProvider as CcConfigProvider;
+use Merchante\Merchante\Gateway\Config\Config;
+use Merchante\Merchante\Gateway\Config\HostedCheckout\Config as HcConfig;
+use Merchante\Merchante\Model\Ui\ConfigProvider as CcConfigProvider;
 use Magento\Payment\Model\CcConfig;
 use Magento\Payment\Model\MethodInterface;
 use Magento\Framework\UrlInterface;
@@ -19,12 +19,12 @@ use Magento\Framework\View\Asset\Repository as AssetRepository;
 
 /**
  * Class ConfigProvider
- * @package Magento\Merchantesolutions\Model\Ui
+ * @package Merchante\Merchante\Model\Ui
  */
 class ConfigProvider implements ConfigProviderInterface
 {
-    const CODE = 'merchantesolutions_hosted_checkout';
-    const CC_VAULT_CODE = 'merchantesolutions_hosted_checkout_cc_vault';
+    const CODE = 'merchante_hosted_checkout';
+    const CC_VAULT_CODE = 'merchante_hosted_checkout_cc_vault';
     const AUTH_TOKENIZATION = 'PT';
     const SALE_TOKENIZATION = 'DT';
 
@@ -171,7 +171,7 @@ class ConfigProvider implements ConfigProviderInterface
     public function getSpinnerAssetUrl()
     {
         try {
-            $asset = $this->assetRepository->createAsset('Magento_Merchantesolutions::images/loader-1.gif');
+            $asset = $this->assetRepository->createAsset('Merchante_Merchante::images/loader-1.gif');
             return $asset->getUrl();
         } catch (LocalizedException $exception) {
             return '';

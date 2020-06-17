@@ -4,22 +4,22 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Model\Ui;
+namespace Merchante\Merchante\Model\Ui;
 
 use Magento\Checkout\Model\ConfigProviderInterface;
 use Magento\Framework\Session\SessionManagerInterface;
-use Magento\Merchantesolutions\Gateway\Config\Config;
+use Merchante\Merchante\Gateway\Config\Config;
 use Magento\Payment\Model\CcConfig;
 
 /**
  * Class ConfigProvider
- * @package Magento\Merchantesolutions\Model\Ui
+ * @package Merchante\Merchante\Model\Ui
  */
 class ConfigProvider implements ConfigProviderInterface
 {
-    const CODE = 'merchantesolutions';
-    const CC_VAULT_CODE = 'merchantesolutions_cc_vault';
-    const RBS_CODE = 'merchantesolutions_rbs';
+    const CODE = 'merchante';
+    const CC_VAULT_CODE = 'merchante_cc_vault';
+    const RBS_CODE = 'merchante_rbs';
 
     /**
      * @var Config

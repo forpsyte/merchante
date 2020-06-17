@@ -4,22 +4,22 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Model\Adapter;
+namespace Merchante\Merchante\Model\Adapter;
 
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Serialize\Serializer\Json;
-use Magento\Merchantesolutions\Gateway\Http\Client;
-use Magento\Merchantesolutions\Gateway\Http\Data\Response;
-use Magento\Merchantesolutions\Gateway\Http\Data\ResponseFactory;
-use Magento\Merchantesolutions\Gateway\Http\RequestFactory;
-use Magento\Merchantesolutions\Model\Adminhtml\Source\Environment;
+use Merchante\Merchante\Gateway\Http\Client;
+use Merchante\Merchante\Gateway\Http\Data\Response;
+use Merchante\Merchante\Gateway\Http\Data\ResponseFactory;
+use Merchante\Merchante\Gateway\Http\RequestFactory;
+use Merchante\Merchante\Model\Adminhtml\Source\Environment;
 
 
 /**
- * Class MerchantesolutionsAdapter
- * @package Magento\Merchantesolutions\Model\Adapter
+ * Class MerchanteAdapter
+ * @package Merchante\Merchante\Model\Adapter
  */
-class MerchantesolutionsAdapter
+class MerchanteAdapter
 {
     /**
      * @var string
@@ -57,7 +57,7 @@ class MerchantesolutionsAdapter
     protected $serializer;
 
     /**
-     * MerchantesolutionsAdapter constructor.
+     * MerchanteAdapter constructor.
      *
      * @param string $profileId
      * @param string $profileKey

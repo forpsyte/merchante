@@ -3,17 +3,17 @@
  * Copyright © Visiture, LLC. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace Magento\Merchantesolutions\Gateway\Config;
+namespace Merchante\Merchante\Gateway\Config;
 
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\Encryption\EncryptorInterface;
 use Magento\Framework\Serialize\Serializer\Json;
-use Magento\Merchantesolutions\Model\Adminhtml\Source\Environment;
+use Merchante\Merchante\Model\Adminhtml\Source\Environment;
 use Psr\Log\LoggerInterface;
 
 /**
  * Class Config
- * @package Magento\Merchantesolutions\Gateway\Config
+ * @package Merchante\Merchante\Gateway\Config
  */
 class Config extends \Magento\Payment\Gateway\Config\Config
 {
@@ -24,14 +24,14 @@ class Config extends \Magento\Payment\Gateway\Config\Config
     const KEY_USE_SANDBOX = 'use_sandbox';
     const KEY_USE_CVV = 'usecvv';
     const KEY_CC_TYPES = 'cctypes';
-    const KEY_CC_TYPES_MERCHANTESOLUTIONS_MAPPER = 'cctypes_merchantesolutions_mapper';
+    const KEY_CC_TYPES_MERCHANTESOLUTIONS_MAPPER = 'cctypes_merchante_mapper';
     const KEY_USE_LEVEL_THREE = 'use_level_iii';
     const KEY_ALT_TAX_RATES = 'alt_tax_rates';
     const KEY_COMMODITY_CODE = 'commodity_code';
     const KEY_DEBUG = 'debug';
     const KEY_AVS_RESULT_NON_RISK = 'avs_result_non_risk';
     const KEY_AVS_RESULT_RISK = 'avs_result_risk';
-    const PATH_CC_VAULT_ACTIVE = 'payment/merchantesolutions_cc_vault/active';
+    const PATH_CC_VAULT_ACTIVE = 'payment/merchante_cc_vault/active';
     const PATH_MERCHANT_VAT_NUMBER = 'general/store_information/merchant_vat_number';
 
     /**
@@ -60,7 +60,7 @@ class Config extends \Magento\Payment\Gateway\Config\Config
     private $methodCode;
 
     /**
-     * Merchantesolutions config constructor
+     * Merchante config constructor
      *
      * @param ScopeConfigInterface $scopeConfig
      * @param EncryptorInterface $encryptor
@@ -156,7 +156,7 @@ class Config extends \Magento\Payment\Gateway\Config\Config
     }
 
     /**
-     * Retrieve mapper between Magento and Merchant e-Solutions card types
+     * Retrieve mapper between Magento and MerchantE card types
      *
      * @return array
      */

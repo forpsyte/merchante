@@ -4,16 +4,16 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Api;
+namespace Merchante\Merchante\Api;
 
 use Magento\Framework\Api\SearchCriteriaInterface;
 use Magento\Framework\Data\SearchResultInterface;
-use Magento\Merchantesolutions\Model\Transaction;
+use Merchante\Merchante\Model\Transaction;
 
 /**
  * Interface TransactionRepositoryInterface
  * @api
- * @package Magento\Merchantesolutions\Api
+ * @package Merchante\Merchante\Api
  */
 interface TransactionRepositoryInterface
 {

@@ -4,7 +4,7 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Gateway\Http;
+namespace Merchante\Merchante\Gateway\Http;
 
 use Magento\Payment\Gateway\Http\TransferBuilder;
 use Magento\Payment\Gateway\Http\TransferFactoryInterface;
@@ -12,7 +12,7 @@ use Magento\Payment\Gateway\Http\TransferInterface;
 
 /**
  * Class TransferFactory
- * @package Magento\Merchantesolutions\Gateway\Http
+ * @package Merchante\Merchante\Gateway\Http
  */
 class TransferFactory implements TransferFactoryInterface
 {

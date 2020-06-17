@@ -4,12 +4,12 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Api\Data;
+namespace Merchante\Merchante\Api\Data;
 
 /**
  * Class TransactionInterface
  * @api
- * @package Magento\Merchantesolutions\Api\Data
+ * @package Merchante\Merchante\Api\Data
  */
 interface TransactionInterface
 {

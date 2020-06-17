@@ -1,6 +1,6 @@
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
-    <table name="merchantesolutions_transaction" resource="default" engine="innodb" comment="Merchant e-Solutions Table">
+    <table name="merchante_transaction" resource="default" engine="innodb" comment="MerchantE Table">
         <column xsi:type="int" name="entity_id" padding="10" unsigned="true" nullable="false" identity="true"
                 comment="Entity ID"/>
         <column xsi:type="varchar" name="quote_id" length="64" nullable="false" comment="Quote ID"/>

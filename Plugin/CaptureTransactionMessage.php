@@ -4,18 +4,18 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Plugin;
+namespace Merchante\Merchante\Plugin;
 
 use Magento\Framework\Phrase;
-use Magento\Merchantesolutions\Gateway\Command\CaptureStrategyCommand;
-use Magento\Merchantesolutions\Gateway\Http\Data\Response;
-use Magento\Merchantesolutions\Helper\Data as Helper;
+use Merchante\Merchante\Gateway\Command\CaptureStrategyCommand;
+use Merchante\Merchante\Gateway\Http\Data\Response;
+use Merchante\Merchante\Helper\Data as Helper;
 use Magento\Sales\Api\Data\OrderPaymentInterface;
 use Magento\Sales\Model\Order\Payment\State\CaptureCommand;
 
 /**
  * Class TransactionMessage
- * @package Magento\Merchantesolutions\Plugin
+ * @package Merchante\Merchante\Plugin
  */
 class CaptureTransactionMessage
 {

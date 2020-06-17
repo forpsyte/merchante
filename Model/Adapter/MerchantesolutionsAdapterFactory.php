@@ -4,16 +4,16 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Model\Adapter;
+namespace Merchante\Merchante\Model\Adapter;
 
 use Magento\Framework\ObjectManagerInterface;
-use Magento\Merchantesolutions\Gateway\Config\Config;
+use Merchante\Merchante\Gateway\Config\Config;
 
 /**
- * Class MerchantesolutionsAdapterFactory
- * @package Magento\Merchantesolutions\Model\Adapter
+ * Class MerchanteAdapterFactory
+ * @package Merchante\Merchante\Model\Adapter
  */
-class MerchantesolutionsAdapterFactory
+class MerchanteAdapterFactory
 {
     /**
      * @var ObjectManagerInterface
@@ -26,7 +26,7 @@ class MerchantesolutionsAdapterFactory
     protected $config;
 
     /**
-     * MerchantesolutionsAdapterFactory constructor.
+     * MerchanteAdapterFactory constructor.
      *
      * @param ObjectManagerInterface $objectManager
      * @param Config $config
@@ -40,14 +40,14 @@ class MerchantesolutionsAdapterFactory
     }
 
     /**
-     * Creates instance of Merchantesolutions Adapter.
+     * Creates instance of Merchante Adapter.
      * @param int|null $storeId
-     * @return MerchantesolutionsAdapter
+     * @return MerchanteAdapter
      */
     public function create($storeId = null)
     {
         return $this->objectManager->create(
-            MerchantesolutionsAdapter::class,
+            MerchanteAdapter::class,
             [
                 'profileId' => $this->config->getValue(Config::KEY_PROFILE_ID, $storeId),
                 'profileKey' => $this->config->getValue(Config::KEY_PROFILE_KEY, $storeId),

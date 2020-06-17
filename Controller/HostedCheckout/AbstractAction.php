@@ -4,20 +4,20 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Controller\HostedCheckout;
+namespace Merchante\Merchante\Controller\HostedCheckout;
 
 use Magento\Checkout\Model\Session;
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\App\RequestInterface;
 use Magento\Framework\Controller\Result\Redirect;
-use Magento\Merchantesolutions\Api\Data\TransactionInterface;
-use Magento\Merchantesolutions\Gateway\Config\HostedCheckout\Config;
+use Merchante\Merchante\Api\Data\TransactionInterface;
+use Merchante\Merchante\Gateway\Config\HostedCheckout\Config;
 use Magento\Quote\Api\Data\CartInterface;
 
 /**
  * Class AbstractAction
- * @package Magento\Merchantesolutions\Controller\HostedCheckout
+ * @package Merchante\Merchante\Controller\HostedCheckout
  */
 abstract class AbstractAction extends Action
 {

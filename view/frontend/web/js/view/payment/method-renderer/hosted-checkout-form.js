@@ -26,10 +26,10 @@ define(
 
         return Component.extend({
             defaults: {
-                template: 'Magento_Merchantesolutions/payment/hosted-checkout-form',
+                template: 'Merchante_Merchante/payment/hosted-checkout-form',
                 checkoutSelector: '#checkout',
                 active: false,
-                code: 'merchantesolutions_hosted_checkout',
+                code: 'merchante_hosted_checkout',
                 lastBillingAddress: null,
                 paymentStatusInterval: null,
                 profileId: null,

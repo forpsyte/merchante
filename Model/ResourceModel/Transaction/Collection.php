@@ -4,14 +4,14 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Model\ResourceModel\Transaction;
+namespace Merchante\Merchante\Model\ResourceModel\Transaction;
 
 use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
-use Magento\Merchantesolutions\Model\Transaction;
+use Merchante\Merchante\Model\Transaction;
 
 /**
  * Class Collection
- * @package Magento\Merchantesolutions\Model\ResourceModel\Transaction
+ * @package Merchante\Merchante\Model\ResourceModel\Transaction
  */
 class Collection extends AbstractCollection
 {
@@ -25,7 +25,7 @@ class Collection extends AbstractCollection
      *
      * @var string
      */
-    protected $_eventPrefix = 'merchantesolutions_transaction_collection';
+    protected $_eventPrefix = 'merchante_transaction_collection';
 
     /**
      * Event object
@@ -41,7 +41,7 @@ class Collection extends AbstractCollection
      */
     protected function _construct()
     {
-        $this->_init(Transaction::class, \Magento\Merchantesolutions\Model\ResourceModel\Transaction::class);
+        $this->_init(Transaction::class, \Merchante\Merchante\Model\ResourceModel\Transaction::class);
         $this->_map['fields']['entity_id'] = 'main_table.entity_id';
     }
 }

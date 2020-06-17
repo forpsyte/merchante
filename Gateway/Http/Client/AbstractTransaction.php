@@ -4,11 +4,11 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Gateway\Http\Client;
+namespace Merchante\Merchante\Gateway\Http\Client;
 
 use Exception;
-use Magento\Merchantesolutions\Model\Adapter\MerchantesolutionsAdapterFactory;
-use Magento\Merchantesolutions\Gateway\Http\Data\Response;
+use Merchante\Merchante\Model\Adapter\MerchanteAdapterFactory;
+use Merchante\Merchante\Gateway\Http\Data\Response;
 use Magento\Payment\Gateway\Http\ClientException;
 use Magento\Payment\Gateway\Http\ClientInterface;
 use Magento\Payment\Gateway\Http\TransferInterface;
@@ -17,7 +17,7 @@ use Psr\Log\LoggerInterface;
 
 /**
  * Class AbstractTransaction
- * @package Magento\Merchantesolutions\Gateway\Http\Client
+ * @package Merchante\Merchante\Gateway\Http\Client
  */
 abstract class AbstractTransaction implements ClientInterface
 {
@@ -32,7 +32,7 @@ abstract class AbstractTransaction implements ClientInterface
     protected $customLogger;
 
     /**
-     * @var MerchantesolutionsAdapterFactory
+     * @var MerchanteAdapterFactory
      */
     protected $adapterFactory;
 
@@ -41,12 +41,12 @@ abstract class AbstractTransaction implements ClientInterface
      *
      * @param LoggerInterface $logger
      * @param Logger $customLogger
-     * @param MerchantesolutionsAdapterFactory $adapterFactory
+     * @param MerchanteAdapterFactory $adapterFactory
      */
     public function __construct(
         LoggerInterface $logger,
         Logger $customLogger,
-        MerchantesolutionsAdapterFactory $adapterFactory
+        MerchanteAdapterFactory $adapterFactory
     ) {
         $this->logger = $logger;
         $this->customLogger = $customLogger;

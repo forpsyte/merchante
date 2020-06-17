@@ -4,14 +4,14 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Gateway\Http;
+namespace Merchante\Merchante\Gateway\Http;
 
 use Magento\Framework\ObjectManagerInterface;
-use Magento\Merchantesolutions\Gateway\Http\Data\Request;
+use Merchante\Merchante\Gateway\Http\Data\Request;
 
 /**
  * Class RequestFactory
- * @package Magento\Merchantesolutions\Model\Adapter\Http
+ * @package Merchante\Merchante\Model\Adapter\Http
  */
 class RequestFactory
 {
@@ -31,7 +31,7 @@ class RequestFactory
     }
 
     /**
-     * Creates instance of Merchantesolutions Request.
+     * Creates instance of Merchante Request.
      *
      * @return Request
      */

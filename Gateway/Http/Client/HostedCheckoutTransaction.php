@@ -4,14 +4,14 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Gateway\Http\Client;
+namespace Merchante\Merchante\Gateway\Http\Client;
 
 use Magento\Framework\Exception\LocalizedException;
-use Magento\Merchantesolutions\Gateway\Http\Data\Response;
+use Merchante\Merchante\Gateway\Http\Data\Response;
 
 /**
  * Class TransactionSale
- * @package Magento\Merchantesolutions\Gateway\Http\Client
+ * @package Merchante\Merchante\Gateway\Http\Client
  */
 class HostedCheckoutTransaction extends AbstractTransaction
 {

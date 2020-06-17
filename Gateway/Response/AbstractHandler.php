@@ -4,17 +4,17 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Gateway\Response;
+namespace Merchante\Merchante\Gateway\Response;
 
 use Magento\Framework\Exception\LocalizedException;
-use Magento\Merchantesolutions\Gateway\Http\Data\Response;
-use Magento\Merchantesolutions\Gateway\SubjectReader;
+use Merchante\Merchante\Gateway\Http\Data\Response;
+use Merchante\Merchante\Gateway\SubjectReader;
 use Magento\Payment\Gateway\Response\HandlerInterface;
 use Magento\Sales\Model\Order\Payment;
 
 /**
  * Class AbstractHandler
- * @package Magento\Merchantesolutions\Gateway\Response
+ * @package Merchante\Merchante\Gateway\Response
  */
 abstract class AbstractHandler implements HandlerInterface
 {

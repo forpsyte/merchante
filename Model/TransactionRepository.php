@@ -4,21 +4,21 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Model;
+namespace Merchante\Merchante\Model;
 
 use Magento\Framework\Api\SearchCriteria\CollectionProcessorInterface;
 use Magento\Framework\Api\SearchCriteriaInterface;
 use Magento\Framework\Exception\CouldNotDeleteException;
 use Magento\Framework\Exception\CouldNotSaveException;
 use Magento\Framework\Exception\NoSuchEntityException;
-use Magento\Merchantesolutions\Api\Data;
-use Magento\Merchantesolutions\Api\TransactionRepositoryInterface;
-use Magento\Merchantesolutions\Model\ResourceModel\Transaction as ResourceTransaction;
-use Magento\Merchantesolutions\Model\ResourceModel\Transaction\CollectionFactory as TransactionCollectionFactory;
+use Merchante\Merchante\Api\Data;
+use Merchante\Merchante\Api\TransactionRepositoryInterface;
+use Merchante\Merchante\Model\ResourceModel\Transaction as ResourceTransaction;
+use Merchante\Merchante\Model\ResourceModel\Transaction\CollectionFactory as TransactionCollectionFactory;
 
 /**
  * Class TransactionRepository
- * @package Magento\Merchantesolutions\Model
+ * @package Merchante\Merchante\Model
  */
 class TransactionRepository implements TransactionRepositoryInterface
 {
@@ -103,7 +103,7 @@ class TransactionRepository implements TransactionRepositoryInterface
      */
     public function getList(SearchCriteriaInterface $searchCriteria)
     {
-        /** @var  \Magento\Merchantesolutions\Model\ResourceModel\Transaction\Collection $collection */
+        /** @var  \Merchante\Merchante\Model\ResourceModel\Transaction\Collection $collection */
         $collection = $this->transactionCollectionFactory->create();
 
         $this->collectionProcessor->process($searchCriteria, $collection);

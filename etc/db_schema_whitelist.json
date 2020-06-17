@@ -1,5 +1,5 @@
 {
-    "merchantesolutions_transaction": {
+    "merchante_transaction": {
         "column": {
             "entity_id": true,
             "quote_id": true,

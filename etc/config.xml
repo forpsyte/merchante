@@ -2,7 +2,7 @@
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
         <payment>
-            <merchantesolutions>
+            <merchante>
                 <active>0</active>
                 <debug>1</debug>
                 <can_authorize>1</can_authorize>
@@ -15,12 +15,12 @@
                 <can_use_checkout>1</can_use_checkout>
                 <can_use_internal>1</can_use_internal>
                 <is_gateway>1</is_gateway>
-                <model>MerchantesolutionsFacade</model>
+                <model>MerchanteFacade</model>
                 <order_status>processing</order_status>
                 <paymentInfoKeys>cc_type,cc_number,transaction_id,error_code,avs_result,auth_code,auth_response_text,cvv2_result</paymentInfoKeys>
                 <privateInfoKeys>error_code,avs_result,auth_code,auth_response_text,cvv2_result</privateInfoKeys>
                 <payment_action>authorize</payment_action>
-                <title>Credit Card (Merchant e-Solutions)</title>
+                <title>Credit Card (MerchantE)</title>
                 <currency>USD</currency>
                 <profile_id/>
                 <profile_key backend_model="Magento\Config\Model\Config\Backend\Encrypted" />
@@ -30,7 +30,7 @@
                 <cctypes>VI,MC,AE,DI,UN</cctypes>
                 <avs_result_non_risk><![CDATA[{"Y":"street and postal code match", "A":"address match, zip mismatch", "D":"exact match, international", "X":"street and postal code match"}]]></avs_result_non_risk>
                 <avs_result_risk><![CDATA[{"N":"address and zip mismatch", "Z":"address mismatch, 5-digit zip match", "W":"address mismatch, zip match", "U":"address unavailable"}]]></avs_result_risk>
-                <cctypes_merchantesolutions_mapper><![CDATA[{"american-express":"AE","discover":"DI","jcb":"JCB","mastercard":"MC","master-card":"MC","visa":"VI","maestro":"MI","diners-club":"DN","unionpay":"UN"}]]></cctypes_merchantesolutions_mapper>
+                <cctypes_merchante_mapper><![CDATA[{"american-express":"AE","discover":"DI","jcb":"JCB","mastercard":"MC","master-card":"MC","visa":"VI","maestro":"MI","diners-club":"DN","unionpay":"UN"}]]></cctypes_merchante_mapper>
                 <environment>test</environment>
                 <environment_live_url><![CDATA[https://api.merchante-solutions.com/mes-api/tridentApi]]></environment_live_url>
                 <environment_cert_url><![CDATA[https://cert.merchante-solutions.com/mes-api/tridentApi]]></environment_cert_url>
@@ -38,14 +38,14 @@
                 <use_level_iii>0</use_level_iii>
                 <client_reference_number>Order #[orderid]</client_reference_number>
                 <allowspecific>0</allowspecific>
-                <group>merchantesolutions_group</group>
-            </merchantesolutions>
-            <merchantesolutions_cc_vault>
-                <model>MerchantesolutionsCreditCardVaultFacade</model>
-                <title>Stored Cards (Merchant e-Solutions)</title>
-                <group>merchantesolutions_group</group>
-            </merchantesolutions_cc_vault>
-            <merchantesolutions_hosted_checkout>
+                <group>merchante_group</group>
+            </merchante>
+            <merchante_cc_vault>
+                <model>MerchanteCreditCardVaultFacade</model>
+                <title>Stored Cards (MerchantE)</title>
+                <group>merchante_group</group>
+            </merchante_cc_vault>
+            <merchante_hosted_checkout>
                 <active>0</active>
                 <debug>1</debug>
                 <can_authorize>1</can_authorize>
@@ -58,24 +58,24 @@
                 <can_use_internal>0</can_use_internal>
                 <display_on_shopping_cart>1</display_on_shopping_cart>
                 <is_gateway>1</is_gateway>
-                <model>MerchantesolutionsHostedCheckoutFacade</model>
+                <model>MerchanteHostedCheckoutFacade</model>
                 <order_status>processing</order_status>
                 <paymentInfoKeys>cc_type,cc_number,transaction_id,error_code,avs_result,auth_code,auth_response_text,cvv2_result</paymentInfoKeys>
                 <privateInfoKeys>error_code,avs_result,auth_code,auth_response_text,cvv2_result</privateInfoKeys>
                 <payment_action>authorize</payment_action>
-                <title>Credit Card (Merchant e-Solutions Hosted Checkout)</title>
+                <title>Credit Card (MerchantE Hosted Checkout)</title>
                 <currency>USD</currency>
                 <profile_id/>
                 <profile_key backend_model="Magento\Config\Model\Config\Backend\Encrypted" />
                 <user_id/>
                 <useccv>1</useccv>
-                <cctypes_merchantesolutions_mapper><![CDATA[{"american-express":"AE","discover":"DI","jcb":"JCB","mastercard":"MC","master-card":"MC","visa":"VS","maestro":"MI","diners-club":"DN","unionpay":"UN"}]]></cctypes_merchantesolutions_mapper>
+                <cctypes_merchante_mapper><![CDATA[{"american-express":"AE","discover":"DI","jcb":"JCB","mastercard":"MC","master-card":"MC","visa":"VS","maestro":"MI","diners-club":"DN","unionpay":"UN"}]]></cctypes_merchante_mapper>
                 <gateway_url><![CDATA[https://www.merchante-solutions.com/jsp/tpg/secure_checkout.jsp]]></gateway_url>
                 <use_level_iii>0</use_level_iii>
                 <client_reference_number>Order #[orderid]</client_reference_number>
                 <allowspecific>0</allowspecific>
-                <group>merchantesolutions_group</group>
-            </merchantesolutions_hosted_checkout>
+                <group>merchante_group</group>
+            </merchante_hosted_checkout>
         </payment>
     </default>
 </config>

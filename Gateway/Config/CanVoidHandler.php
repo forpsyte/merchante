@@ -4,15 +4,15 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Gateway\Config;
+namespace Merchante\Merchante\Gateway\Config;
 
-use Magento\Merchantesolutions\Gateway\SubjectReader;
+use Merchante\Merchante\Gateway\SubjectReader;
 use Magento\Payment\Gateway\Config\ValueHandlerInterface;
 use Magento\Sales\Model\Order\Payment;
 
 /**
  * Class CanVoidHandler
- * @package Magento\Merchantesolutions\Gateway\Config
+ * @package Merchante\Merchante\Gateway\Config
  */
 class CanVoidHandler implements ValueHandlerInterface
 {

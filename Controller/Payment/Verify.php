@@ -4,19 +4,19 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Controller\Payment;
+namespace Merchante\Merchante\Controller\Payment;
 
 use Magento\Checkout\Model\Session;
 use Magento\Framework\Api\SearchCriteriaBuilder;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\Controller\Result\JsonFactory;
-use Magento\Merchantesolutions\Controller\HostedCheckout\AbstractAction;
-use Magento\Merchantesolutions\Gateway\Config\HostedCheckout\Config;
-use Magento\Merchantesolutions\Api\TransactionRepositoryInterface;
+use Merchante\Merchante\Controller\HostedCheckout\AbstractAction;
+use Merchante\Merchante\Gateway\Config\HostedCheckout\Config;
+use Merchante\Merchante\Api\TransactionRepositoryInterface;
 
 /**
  * Class Verify
- * @package Magento\Merchantesolutions\Controller\Payment
+ * @package Merchante\Merchante\Controller\Payment
  */
 class Verify extends AbstractAction
 {

@@ -10,7 +10,7 @@ define([
     'use strict';
 
     return function(serviceUrl, payload){
-        let method = 'merchantesolutions';
+        let method = 'merchante';
 
         return $.ajax({
             url: serviceUrl,

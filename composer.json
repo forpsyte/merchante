@@ -1,5 +1,5 @@
 {
-    "name": "merchantesolutions/gateway",
+    "name": "merchante/merchante",
     "description": "N/A",
     "config": {
         "sort-packages": true
@@ -36,7 +36,7 @@
             "registration.php"
         ],
         "psr-4": {
-            "Merchantesolutions\\Gateway\\": ""
+            "Merchante\\Merchante\\": ""
         }
     },
     "version": "100.3.3"

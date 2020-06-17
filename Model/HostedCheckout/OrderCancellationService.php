@@ -5,7 +5,7 @@
  */
 declare(strict_types=1);
 
-namespace Magento\Merchantesolutions\Model\HostedCheckout;
+namespace Merchante\Merchante\Model\HostedCheckout;
 
 use Magento\Framework\Api\SearchCriteriaBuilder;
 use Magento\Sales\Api\Data\OrderInterface;
@@ -13,7 +13,7 @@ use Magento\Sales\Api\OrderRepositoryInterface;
 
 /**
  * Class OrderCancellationService
- * @package Magento\Merchantesolutions\Model\HostedCheckout
+ * @package Merchante\Merchante\Model\HostedCheckout
  */
 class OrderCancellationService
 {

@@ -4,13 +4,13 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Gateway\Http\Data;
+namespace Merchante\Merchante\Gateway\Http\Data;
 
 use ArrayAccess;
 
 /**
  * Class Response
- * @package Magento\Merchantesolutions\Model\Http\Data
+ * @package Merchante\Merchante\Model\Http\Data
  */
 class Response implements ArrayAccess
 {

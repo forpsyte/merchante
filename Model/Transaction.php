@@ -4,14 +4,14 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Model;
+namespace Merchante\Merchante\Model;
 
 use Magento\Framework\Model\AbstractModel;
-use Magento\Merchantesolutions\Api\Data\TransactionInterface;
+use Merchante\Merchante\Api\Data\TransactionInterface;
 
 /**
  * Class Transaction
- * @package Magento\Merchantesolutions\Model
+ * @package Merchante\Merchante\Model
  */
 class Transaction extends AbstractModel implements TransactionInterface
 {
@@ -20,7 +20,7 @@ class Transaction extends AbstractModel implements TransactionInterface
      *
      * @var string
      */
-    protected $_eventPrefix = 'merchantesolutions_transaction';
+    protected $_eventPrefix = 'merchante_transaction';
 
     /**
      * Initialize resource model.
@@ -29,7 +29,7 @@ class Transaction extends AbstractModel implements TransactionInterface
      */
     protected function _construct()
     {
-        $this->_init(\Magento\Merchantesolutions\Model\ResourceModel\Transaction::class);
+        $this->_init(\Merchante\Merchante\Model\ResourceModel\Transaction::class);
     }
 
     /**

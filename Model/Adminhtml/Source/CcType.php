@@ -4,11 +4,11 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Model\Adminhtml\Source;
+namespace Merchante\Merchante\Model\Adminhtml\Source;
 
 /**
  * Class CcType
- * @package Magento\Merchantesolutions\Model\Adminhtml\Source
+ * @package Merchante\Merchante\Model\Adminhtml\Source
  */
 class CcType extends \Magento\Payment\Model\Source\Cctype
 {

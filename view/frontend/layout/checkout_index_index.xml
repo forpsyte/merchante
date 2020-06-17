@@ -1,6 +1,6 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
-        <css src="Magento_Merchantesolutions::styles.css"/>
+        <css src="Merchante_Merchante::styles.css"/>
     </head>
     <body>
         <referenceBlock name="checkout.root">
@@ -18,21 +18,21 @@
                                                     <item name="children" xsi:type="array">
                                                         <item name="renders" xsi:type="array">
                                                             <item name="children" xsi:type="array">
-                                                                <item name="merchantesolutions" xsi:type="array">
-                                                                    <item name="component" xsi:type="string">Magento_Merchantesolutions/js/view/payment/cc-form</item>
+                                                                <item name="merchante" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Merchante_Merchante/js/view/payment/cc-form</item>
                                                                     <item name="methods" xsi:type="array">
-                                                                        <item name="merchantesolutions" xsi:type="array">
+                                                                        <item name="merchante" xsi:type="array">
                                                                             <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
                                                                         </item>
-                                                                        <item name="merchantesolutions_cc_vault" xsi:type="array">
+                                                                        <item name="merchante_cc_vault" xsi:type="array">
                                                                             <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
                                                                         </item>
                                                                     </item>
                                                                 </item>
-                                                                <item name="merchantesolutions_hosted_checkout" xsi:type="array">
-                                                                    <item name="component" xsi:type="string">Magento_Merchantesolutions/js/view/payment/cc-form</item>
+                                                                <item name="merchante_hosted_checkout" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Merchante_Merchante/js/view/payment/cc-form</item>
                                                                     <item name="methods" xsi:type="array">
-                                                                        <item name="merchantesolutions_hosted_checkout" xsi:type="array">
+                                                                        <item name="merchante_hosted_checkout" xsi:type="array">
                                                                             <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
                                                                         </item>
                                                                     </item>

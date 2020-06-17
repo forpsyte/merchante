@@ -4,16 +4,16 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Plugin;
+namespace Merchante\Merchante\Plugin;
 
-use Magento\Merchantesolutions\Gateway\Http\Data\Response;
-use Magento\Merchantesolutions\Helper\Data as Helper;
+use Merchante\Merchante\Gateway\Http\Data\Response;
+use Merchante\Merchante\Helper\Data as Helper;
 use Magento\Sales\Model\Order\Payment;
 use Magento\Sales\Model\Order\Status\History;
 
 /**
  * Class ClosedTransactionMessage
- * @package Magento\Merchantesolutions\Plugin
+ * @package Merchante\Merchante\Plugin
  */
 class ClosedTransactionMessage
 {

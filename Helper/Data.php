@@ -4,13 +4,13 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Helper;
+namespace Merchante\Merchante\Helper;
 
 use Magento\Sales\Api\Data\OrderPaymentInterface;
 
 /**
  * Class Data
- * @package Magento\Merchantesolutions\Helper
+ * @package Merchante\Merchante\Helper
  */
 class Data
 {

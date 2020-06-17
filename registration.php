@@ -8,6 +8,6 @@ use \Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(
     ComponentRegistrar::MODULE,
-    'Magento_Merchantesolutions',
+    'Merchante_Merchante',
     __DIR__
 );

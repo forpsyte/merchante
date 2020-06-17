@@ -11,7 +11,7 @@ define(
         'Magento_Payment/js/view/payment/cc-form',
         'Magento_Vault/js/view/payment/vault-enabler',
         'Magento_Ui/js/model/messageList',
-        'Magento_Merchantesolutions/js/action/tokenize',
+        'Merchante_Merchante/js/action/tokenize',
     ],
     function (
         _,
@@ -25,9 +25,9 @@ define(
 
         return Component.extend({
             defaults: {
-                template: 'Magento_Merchantesolutions/payment/cc-form',
+                template: 'Merchante_Merchante/payment/cc-form',
                 active: false,
-                code: 'merchantesolutions',
+                code: 'merchante',
                 lastBillingAddress: null,
                 creditCardType: '',
                 creditCardExpYear: '',

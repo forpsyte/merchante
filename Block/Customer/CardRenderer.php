@@ -4,15 +4,15 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Block\Customer;
+namespace Merchante\Merchante\Block\Customer;
 
 use Magento\Vault\Block\AbstractCardRenderer;
 use Magento\Vault\Api\Data\PaymentTokenInterface;
-use Magento\Merchantesolutions\Model\Ui\ConfigProvider;
+use Merchante\Merchante\Model\Ui\ConfigProvider;
 
 /**
  * Class CardRenderer
- * @package Magento\Merchantesolutions\Block\Customer
+ * @package Merchante\Merchante\Block\Customer
  */
 class CardRenderer extends AbstractCardRenderer
 {

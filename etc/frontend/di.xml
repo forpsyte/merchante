@@ -3,8 +3,8 @@
     <type name="Magento\Checkout\Model\CompositeConfigProvider">
         <arguments>
             <argument name="configProviders" xsi:type="array">
-                <item name="merchantesolutions_config_provider" xsi:type="object">Magento\Merchantesolutions\Model\Ui\ConfigProvider</item>
-                <item name="merchantesolutions_hosted_checkout_config_provider" xsi:type="object">Magento\Merchantesolutions\Model\Ui\HostedCheckout\ConfigProvider</item>
+                <item name="merchante_config_provider" xsi:type="object">Merchante\Merchante\Model\Ui\ConfigProvider</item>
+                <item name="merchante_hosted_checkout_config_provider" xsi:type="object">Merchante\Merchante\Model\Ui\HostedCheckout\ConfigProvider</item>
             </argument>
         </arguments>
     </type>
@@ -12,13 +12,13 @@
     <type name="Magento\Payment\Model\CcGenericConfigProvider">
         <arguments>
             <argument name="methodCodes" xsi:type="array">
-                <item name="merchantesolutions" xsi:type="const">Magento\Merchantesolutions\Model\Ui\ConfigProvider::CODE</item>
-                <item name="merchantesolutions_hosted_checkout" xsi:type="const">Magento\Merchantesolutions\Model\Ui\HostedCheckout\ConfigProvider::CODE</item>
+                <item name="merchante" xsi:type="const">Merchante\Merchante\Model\Ui\ConfigProvider::CODE</item>
+                <item name="merchante_hosted_checkout" xsi:type="const">Merchante\Merchante\Model\Ui\HostedCheckout\ConfigProvider::CODE</item>
             </argument>
         </arguments>
     </type>
 
-    <type name="Magento\Merchantesolutions\Block\Info">
+    <type name="Merchante\Merchante\Block\Info">
         <arguments>
             <argument name="data" xsi:type="array">
                 <item xsi:type="string" name="is_secure_mode">1</item>
@@ -29,7 +29,7 @@
     <type name="Magento\Vault\Model\Ui\TokensConfigProvider">
         <arguments>
             <argument name="tokenUiComponentProviders" xsi:type="array">
-                <item name="merchantesolutions" xsi:type="object">Magento\Merchantesolutions\Model\Ui\TokenUiComponentProvider</item>
+                <item name="merchante" xsi:type="object">Merchante\Merchante\Model\Ui\TokenUiComponentProvider</item>
             </argument>
         </arguments>
     </type>

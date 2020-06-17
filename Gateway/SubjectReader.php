@@ -4,16 +4,16 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Merchantesolutions\Gateway;
+namespace Merchante\Merchante\Gateway;
 
 use InvalidArgumentException;
-use Magento\Merchantesolutions\Gateway\Http\Data\Response;
+use Merchante\Merchante\Gateway\Http\Data\Response;
 use Magento\Payment\Gateway\Data\PaymentDataObjectInterface;
 use Magento\Payment\Gateway\Helper;
 
 /**
  * Class SubjectReader
- * @package Magento\Merchantesolutions\Gateway
+ * @package Merchante\Merchante\Gateway
  */
 class SubjectReader
 {
